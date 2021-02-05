@@ -1,11 +1,13 @@
 package org.Photy.photy
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.SignInButton
@@ -50,7 +52,7 @@ class LoginActivity : AppCompatActivity() {
     public override fun onStart(){
         super.onStart()
         val account = GoogleSignIn.getLastSignedInAccount(this)
-        if(account!==null){
+        if(account!==null){// 이미 로그인 되어있을시 바로 메인 액티비티로 이동
             toMainActivity(firebaseAuth.currentUser)
         }
     }
@@ -62,9 +64,8 @@ class LoginActivity : AppCompatActivity() {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             try{
                 // 로그인 성공 확인
-                val account = task.getResult(ApiException::class.java)!!
-                Log.d(TAG, "firebaseAuthWithGoogle:" + account.id)
-                firebaseAuthWithGoogle(account.idToken!!)
+                val account = task.getResult(ApiException::class.java)
+                firebaseAuthWithGoogle(account!!)
             }catch (e: ApiException){
                 // 연결 실패
                 Log.w(TAG, "Google sign in failed", e)
@@ -73,8 +74,12 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun firebaseAuthWithGoogle(idToken: String) {
-        val credential = GoogleAuthProvider.getCredential(idToken, null)
+    @SuppressLint("WrongConstant")
+    private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
+        Log.d("LoginActivity", "firebaseAuthWithGoogle:" + acct.id!!)
+
+        //Google SignInAccount 객체에서 ID 토큰을 가져와서 Firebase Auth로 교환하고 Firebase에 인증
+        val credential = GoogleAuthProvider.getCredential(acct.idToken, null)
         firebaseAuth.signInWithCredential(credential)
             .addOnCompleteListener(this){task ->
                 if (task.isSuccessful){
@@ -83,7 +88,7 @@ class LoginActivity : AppCompatActivity() {
                     toMainActivity(firebaseAuth?.currentUser)
                 } else{
                     Log.w("LoginActivity", "firebaseAuthWithGoogle 실패", task.exception)
-                    Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "로그인에 실패하였습니다.", Snackbar.LENGTH_SHORT).show()
                 }
             }
     }
