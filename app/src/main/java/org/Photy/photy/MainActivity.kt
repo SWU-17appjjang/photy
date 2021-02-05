@@ -1,4 +1,4 @@
-package org.techtown.photy
+package org.Photy.photy
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

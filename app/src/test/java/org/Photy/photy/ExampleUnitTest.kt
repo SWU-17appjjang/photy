@@ -1,4 +1,4 @@
-package org.techtown.photy
+package org.Photy.photy
 
 import org.junit.Test
 

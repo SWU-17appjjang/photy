@@ -1,7 +1,7 @@
 /**
  * Automatically generated file. DO NOT MODIFY
  */
-package org.techtown.photy;
+package org.Photy.photy;
 
 public final class BuildConfig {
   public static final boolean DEBUG = Boolean.parseBoolean("true");
