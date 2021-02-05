@@ -1708,6 +1708,8 @@ id beginning
 id blocking
 id bottom
 id bounce
+id btn_logout
+id btn_revoke
 id buttonPanel
 id cache_measures
 id cancel_button
