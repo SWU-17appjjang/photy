@@ -1,0 +1,2 @@
+org/techtown/photy/BuildConfig.java
+ org.techtown.photy.BuildConfig
