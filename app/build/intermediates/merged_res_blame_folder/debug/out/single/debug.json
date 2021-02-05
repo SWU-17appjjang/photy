@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\HeeyeonCho\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\HeeyeonCho\\photy\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
         "merged": "C:\\Users\\HeeyeonCho\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "C:\\Users\\HeeyeonCho\\photy\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
