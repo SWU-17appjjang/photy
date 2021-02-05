@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "743039944962",
+    "project_id": "poty-test",
+    "storage_bucket": "poty-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743039944962:android:1841b02a5f387f170bda1b",
+        "android_client_info": {
+          "package_name": "org.Photy.photy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "743039944962-62ba3ah4eeb57khuttdaio4mda6rvc9f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.Photy.photy",
+            "certificate_hash": "b4ce790787772dadab97914577bbfa5bcd5bd81a"
+          }
+        },
+        {
+          "client_id": "743039944962-ig9gnta5283ihmv2okc5t1pk3mqoed3j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmx8G8MkF1Kj13XK2PVC3SNwvom3vQZGA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "743039944962-ig9gnta5283ihmv2okc5t1pk3mqoed3j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

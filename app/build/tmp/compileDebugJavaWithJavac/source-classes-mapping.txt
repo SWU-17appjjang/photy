@@ -1,2 +1,2 @@
-org/techtown/photy/BuildConfig.java
- org.techtown.photy.BuildConfig
+org/Photy/photy/BuildConfig.java
+ org.Photy.photy.BuildConfig

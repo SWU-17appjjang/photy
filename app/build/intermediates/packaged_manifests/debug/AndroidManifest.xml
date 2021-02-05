@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.techtown.photy"
+    package="org.Photy.photy"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -20,7 +20,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.Photy" >
         <activity
-            android:name="org.techtown.photy.SplashActivity"
+            android:name="org.Photy.photy.SplashActivity"
             android:theme="@style/Splash" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="org.techtown.photy.MainActivity" />
+        <activity android:name="org.Photy.photy.MainActivity" />
     </application>
 
 </manifest>

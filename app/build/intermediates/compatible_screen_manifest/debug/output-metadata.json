@@ -4,7 +4,7 @@
     "type": "COMPATIBLE_SCREEN_MANIFEST",
     "kind": "Directory"
   },
-  "applicationId": "org.techtown.photy",
+  "applicationId": "org.Photy.photy",
   "variantName": "debug",
   "elements": []
 }

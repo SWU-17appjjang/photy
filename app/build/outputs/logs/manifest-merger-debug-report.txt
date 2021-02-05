@@ -37,7 +37,7 @@ INJECTED from C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:2:1-26:
 INJECTED from C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:2:1-26:12
 INJECTED from C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:2:1-26:12
 	package
-		ADDED from C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:3:5-33
+		ADDED from C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:3:5-30
 		INJECTED from C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml
 	android:versionName
@@ -74,12 +74,12 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\He
 		ADDED from C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:11:9-43
-activity#org.techtown.photy.SplashActivity
+activity#org.Photy.photy.SplashActivity
 ADDED from C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:13:9-20:20
 	android:theme
 		ADDED from C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:15:13-42
 	android:name
-		ADDED from C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:14:13-43
+		ADDED from C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:14:13-58
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:16:13-19:29
 action#android.intent.action.MAIN
@@ -90,10 +90,10 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:18:17-77
 	android:name
 		ADDED from C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:18:27-74
-activity#org.techtown.photy.MainActivity
-ADDED from C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:22:9-49
+activity#org.Photy.photy.MainActivity
+ADDED from C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:22:9-64
 	android:name
-		ADDED from C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:22:19-47
+		ADDED from C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:22:19-62
 uses-sdk
 INJECTED from C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml

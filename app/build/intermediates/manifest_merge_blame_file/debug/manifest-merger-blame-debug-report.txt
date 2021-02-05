@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="org.techtown.photy"
+3    package="org.Photy.photy"
 4    android:versionCode="1"
 5    android:versionName="1.0" >
 6
@@ -31,8 +31,8 @@
 21-->C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:11:9-43
 22        <activity
 22-->C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:13:9-20:20
-23            android:name="org.techtown.photy.SplashActivity"
-23-->C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:14:13-43
+23            android:name="org.Photy.photy.SplashActivity"
+23-->C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:14:13-58
 24            android:theme="@style/Splash" >
 24-->C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:15:13-42
 25            <intent-filter>
@@ -46,9 +46,9 @@
 28-->C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:18:27-74
 29            </intent-filter>
 30        </activity>
-31        <activity android:name="org.techtown.photy.MainActivity" />
-31-->C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:22:9-49
-31-->C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:22:19-47
+31        <activity android:name="org.Photy.photy.MainActivity" />
+31-->C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:22:9-64
+31-->C:\Users\HeeyeonCho\photy\app\src\main\AndroidManifest.xml:22:19-62
 32    </application>
 33
 34</manifest>
