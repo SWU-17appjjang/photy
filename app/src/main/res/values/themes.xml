@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Photy" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Photy" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -17,6 +17,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+
     <!-- 각 컴포넌트 기본 폰트 설정 -->
     <style name="godoTextView" parent="android:Widget.TextView">
         <item name = "android:fontFamily">@font/godom</item>
@@ -26,11 +27,13 @@
         <item name="android:fontFamily">@font/godob</item>
     </style>
 
+    <!-- 툴바 폰트 지정 -->
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:fontFamily">@font/godom</item>
+    </style>
 
     <!-- Splash Screen theme.-->
     <style name="Splash" parent="Theme.AppCompat.Light.NoActionBar">
     </style>
-
-
 
 </resources>

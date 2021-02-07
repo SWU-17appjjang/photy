@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id = "@+id/account"
+        android:icon = "@drawable/ic_account"
+        android:title = "마이페이지"
+        />
+    <item android:id = "@+id/logout"
+        android:icon = "@drawable/ic_logout"
+        android:title = "로그아웃"
+        />
+    <item android:id = "@+id/signout"
+        android:icon = "@drawable/ic_signout"
+        android:title = "회원탈퇴"
+        />
+    <item android:id = "@+id/maker"
+    android:icon = "@drawable/ic_maker"
+    android:title = "About Photter"
+    />
+</menu>

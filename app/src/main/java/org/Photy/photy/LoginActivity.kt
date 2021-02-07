@@ -42,8 +42,6 @@ class LoginActivity : AppCompatActivity() {
 
 
 
-
-
         // 구글 로그인 버튼
         google_button = findViewById(R.id.google_button)
         google_button.setOnClickListener{
