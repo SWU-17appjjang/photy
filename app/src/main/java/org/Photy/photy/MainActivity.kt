@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         btn_logout = findViewById(R.id.btn_logout)
         btn_revoke = findViewById(R.id.btn_revoke)
 
@@ -38,4 +39,5 @@ class MainActivity : AppCompatActivity() {
     private fun revokeAccess() { //회원탈퇴
         firebaseAuth.currentUser?.delete()
     }
+
 }

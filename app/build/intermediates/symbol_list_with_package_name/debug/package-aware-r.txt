@@ -1082,6 +1082,8 @@ color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
+color ourBlue
+color ourYellow
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -1619,6 +1621,9 @@ drawable splash_logo
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+font default_font
+font godob
+font godom
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -1695,6 +1700,7 @@ id all
 id always
 id animateToEnd
 id animateToStart
+id appName
 id asConfigured
 id async
 id auto
@@ -1822,6 +1828,7 @@ id line3
 id linear
 id listMode
 id list_item
+id login
 id masked
 id message
 id middle
@@ -2941,6 +2948,8 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
+style godoButton
+style godoTextView
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

@@ -2,10 +2,15 @@ package org.Photy.photy
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.util.Log
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -28,6 +33,16 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        // 어플 소개글 색상 설정
+        var info : TextView = findViewById(R.id.title)
+        var spannableString = SpannableString("지금 이 순간, 사진을 공유하다")
+        spannableString.setSpan(ForegroundColorSpan(Color.parseColor("#1e20a1")), 9, 15, spannableString.length )
+        info.text = spannableString
+
+
+
+
 
         // 구글 로그인 버튼
         google_button = findViewById(R.id.google_button)

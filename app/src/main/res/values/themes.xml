@@ -12,10 +12,25 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <!-- 타이틀 바 제거 -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
+
+    <!-- 각 컴포넌트 기본 폰트 설정 -->
+    <style name="godoTextView" parent="android:Widget.TextView">
+        <item name = "android:fontFamily">@font/godom</item>
+    </style>
+
+    <style name="godoButton" parent="android:Widget.Button">
+        <item name="android:fontFamily">@font/godob</item>
+    </style>
+
 
     <!-- Splash Screen theme.-->
     <style name="Splash" parent="Theme.AppCompat.Light.NoActionBar">
     </style>
+
+
 
 </resources>

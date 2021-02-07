@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\HeeyeonCho\\photy\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
+            "outputFile": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\HeeyeonCho\\.gradle\\caches\\transforms-2\\files-2.1\\37c21d20a82ed8d8b530bc2ac50d564e\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\dksle\\.gradle\\caches\\transforms-2\\files-2.1\\37c21d20a82ed8d8b530bc2ac50d564e\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\HeeyeonCho\\.gradle\\caches\\transforms-2\\files-2.1\\3ef9a628ea7891bf8319ff65331c2969\\appcompat-1.2.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\dksle\\.gradle\\caches\\transforms-2\\files-2.1\\3ef9a628ea7891bf8319ff65331c2969\\appcompat-1.2.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -34,7 +34,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\HeeyeonCho\\.gradle\\caches\\transforms-2\\files-2.1\\1938016aecdcd1f5c9a971ffd90ceec2\\material-1.2.1\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\dksle\\.gradle\\caches\\transforms-2\\files-2.1\\1938016aecdcd1f5c9a971ffd90ceec2\\material-1.2.1\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,6",
                         "startColumns": "4,4",
