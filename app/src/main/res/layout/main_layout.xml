@@ -10,10 +10,16 @@
     <include layout="@layout/main_toolbar"/>
 
     <!-- 메인 view -->
-    <TextView
+
+    <Button
+        android:id="@+id/btn_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
+    <ImageView
+        android:id="@+id/img_picture"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="메인 레이아웃"
-        android:textColor="@color/black"/>
+        android:layout_height="289dp"
+        android:layout_marginTop="100dp" />
 </LinearLayout>

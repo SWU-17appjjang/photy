@@ -1727,6 +1727,7 @@ id beginning
 id blocking
 id bottom
 id bounce
+id btn_picture
 id buttonPanel
 id cache_measures
 id cancel_action
@@ -1826,6 +1827,7 @@ id ignore
 id ignoreRequest
 id image
 id imageView
+id img_picture
 id info
 id invisible
 id italic
@@ -2290,6 +2292,9 @@ string path_password_strike_through
 string project_id
 string search_menu_title
 string status_bar_notification_info_overflow
+string tedpermission_close
+string tedpermission_confirm
+string tedpermission_setting
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow
@@ -2759,6 +2764,7 @@ style Theme_MaterialComponents_Light_NoActionBar_Bridge
 style Theme_MaterialComponents_NoActionBar
 style Theme_MaterialComponents_NoActionBar_Bridge
 style Theme_Photy
+style Theme_Transparent_Permission
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar
 style ThemeOverlay_AppCompat_Dark
@@ -3118,6 +3124,7 @@ styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml file_paths
 xml standalone_badge
 xml standalone_badge_gravity_bottom_end
 xml standalone_badge_gravity_bottom_start
