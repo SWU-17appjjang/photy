@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+    override fun onNavigationItemSelected(item: MenuItem): Boolean { // 메뉴 바 버튼 클릭 시
         when(item.itemId){
             R.id.account-> Toast.makeText(this,"account clicked",Toast.LENGTH_SHORT).show()
             R.id.signout-> Toast.makeText(this,"기능 구현 예정",Toast.LENGTH_SHORT).show()
@@ -181,7 +181,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
         }
     }
-
+/*
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -200,5 +200,5 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
         }
     }
-
+*/
 }

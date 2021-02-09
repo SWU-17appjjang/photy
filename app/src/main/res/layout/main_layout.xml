@@ -11,15 +11,33 @@
 
     <!-- 메인 view -->
 
-    <Button
-        android:id="@+id/btn_picture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button" />
-
+    <!--
     <ImageView
         android:id="@+id/img_picture"
         android:layout_width="match_parent"
         android:layout_height="289dp"
         android:layout_marginTop="100dp" />
+    -->
+
+    <GridView
+        android:id="@+id/photoGridView"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:columnWidth="100dp"
+        android:gravity="center"
+        android:horizontalSpacing="20dp"
+        android:numColumns="auto_fit"
+        android:padding="10dp"
+        android:verticalSpacing="20dp" />
+
+    <Button
+        android:id="@+id/btn_picture"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:background="@drawable/btn1_"
+        />
+
+
 </LinearLayout>

@@ -1599,6 +1599,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_signout
+drawable lightening
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
 drawable material_ic_edit_black_24dp
@@ -1788,6 +1789,7 @@ id easeIn
 id easeInOut
 id easeOut
 id edit_query
+id email
 id end
 id end_padder
 id enterAlways
@@ -1827,7 +1829,7 @@ id ignore
 id ignoreRequest
 id image
 id imageView
-id img_picture
+id imageView2
 id info
 id invisible
 id italic
@@ -1839,6 +1841,7 @@ id largeLabel
 id layout
 id left
 id light
+id light_counts
 id line1
 id line3
 id linear
@@ -1887,6 +1890,7 @@ id mtrl_picker_title_text
 id multiply
 id navigation_header_container
 id never
+id nickname
 id noScroll
 id none
 id normal
@@ -1907,6 +1911,7 @@ id path
 id pathRelative
 id peekHeight
 id percent
+id photoGridView
 id pin
 id position
 id postLayout

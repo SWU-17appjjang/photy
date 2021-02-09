@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="108dp"
-        android:layout_marginBottom="324dp"
+        android:layout_marginBottom="200dp"
         android:fontFamily="@font/godom"
         android:text="GOOGLE 계정으로 로그인 하기"
         android:textSize="15dp"
@@ -50,10 +50,10 @@
         android:fontFamily="@font/godob"
         android:text="포티"
         android:textColor="@color/ourYellow"
-        android:textStyle="bold"
         android:textSize="80dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
