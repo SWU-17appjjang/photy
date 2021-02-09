@@ -60,4 +60,7 @@ dependencies {
 
     //TedPermission Gradle 설정
     implementation 'gun0912.ted:tedpermission:2.2.3'
+
+    //이미지 Crop 사용
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
 }

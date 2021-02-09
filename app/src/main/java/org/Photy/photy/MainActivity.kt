@@ -26,6 +26,8 @@ import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.TedPermission
+import com.theartofdev.edmodo.cropper.CropImage
+import com.theartofdev.edmodo.cropper.CropImageView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_toolbar.*
 import java.io.File
@@ -74,14 +76,119 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             revokeAccess()
         }
          */
-
         settingPermission() // 카메라 권한체크 시작
 
         btn_picture=findViewById(R.id.btn_picture) //사진 찍기 버튼
         btn_picture.setOnClickListener {
             startCapture()
         }
+    }
 
+    //카메라 권한 체크
+    fun settingPermission(){
+        var permis = object  : PermissionListener {
+            //            어떠한 형식을 상속받는 익명 클래스의 객체를 생성하기 위해 다음과 같이 작성
+            override fun onPermissionGranted() {
+                Toast.makeText(this@MainActivity, "권한 허가", Toast.LENGTH_SHORT)
+                    .show()
+            }
+
+            override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {
+                Toast.makeText(this@MainActivity, "권한 거부", Toast.LENGTH_SHORT)
+                    .show()
+                ActivityCompat.finishAffinity(this@MainActivity) // 권한 거부시 앱 종료
+            }
+        }
+        TedPermission.with(this)
+            .setPermissionListener(permis)
+            .setRationaleMessage("카메라 사진 권한 필요")
+            .setDeniedMessage("카메라 권한 요청 거부")
+            .setPermissions(
+                android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+//                android.Manifest.permission.READ_EXTERNAL_STORAGE,
+                android.Manifest.permission.CAMERA)
+            .check()
+    }
+
+    // 카메라 호출
+    fun startCapture() {
+        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
+            takePictureIntent.resolveActivity(packageManager)?.also {
+                val photoFile: File? = try {
+                    createImageFile()
+                } catch (ex: IOException) {
+                    null
+                }
+                photoFile?.also {
+                    val photoURI: Uri = FileProvider.getUriForFile(
+                            this,
+                            "org.Photy.photy.fileprovider",
+                            it
+                    )
+                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
+                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
+                }
+            }
+            //이미지Crop
+            intent.putExtra("crop", true)
+        }
+    }
+
+    // 사진 찍은 후 이미지를 파일로 저장. 파일명은 현재 날짜와 시간
+    @Throws(IOException::class)
+    private fun createImageFile(): File {
+        val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
+        val storageDir: File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+        return File.createTempFile(
+                "JPEG_${timeStamp}_",
+                ".jpg",
+                storageDir
+        ).apply {
+            currentPhotoPath = absolutePath
+        }
+    }
+
+    //이미지 Crop 함수
+    private fun launchImageCrop(uri: Uri?) {
+        CropImage.activity(uri).setGuidelines(CropImageView.Guidelines.ON)
+                .setCropShape(CropImageView.CropShape.RECTANGLE)
+                .setAspectRatio(1, 1)
+                .start(this)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        setContentView(R.layout.activity_upload)
+
+        img_picture = findViewById(R.id.img_picture)
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
+            val file = File(currentPhotoPath)
+            val selectedUri = Uri.fromFile(file)
+            if (Build.VERSION.SDK_INT < 28) {
+                val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, selectedUri)
+                launchImageCrop(selectedUri)
+            } else {
+                val decode = ImageDecoder.createSource(
+                        this.contentResolver,
+                        selectedUri
+                )
+                val bitmap = ImageDecoder.decodeBitmap(decode)
+                launchImageCrop(selectedUri)
+            }
+        }
+
+        // 크롭한 이미지를 이미지 뷰에 나타냄
+        if (requestCode === CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            val result = CropImage.getActivityResult(data)
+            if (resultCode === Activity.RESULT_OK) {
+                result.uri?.let {
+                    img_picture.setImageBitmap(result.bitmap)
+                    img_picture.setImageURI(result.uri)
+                }
+            } else if (resultCode === CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+                val error = result.error
+            }
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -121,84 +228,4 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         firebaseAuth.currentUser?.delete()
     }
 
-    fun settingPermission(){
-        var permis = object  : PermissionListener {
-            //            어떠한 형식을 상속받는 익명 클래스의 객체를 생성하기 위해 다음과 같이 작성
-            override fun onPermissionGranted() {
-                Toast.makeText(this@MainActivity, "권한 허가", Toast.LENGTH_SHORT)
-                    .show()
-            }
-
-            override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {
-                Toast.makeText(this@MainActivity, "권한 거부", Toast.LENGTH_SHORT)
-                    .show()
-                ActivityCompat.finishAffinity(this@MainActivity) // 권한 거부시 앱 종료
-            }
-        }
-        TedPermission.with(this)
-            .setPermissionListener(permis)
-            .setRationaleMessage("카메라 사진 권한 필요")
-            .setDeniedMessage("카메라 권한 요청 거부")
-            .setPermissions(
-                android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
-//                android.Manifest.permission.READ_EXTERNAL_STORAGE,
-                android.Manifest.permission.CAMERA)
-            .check()
-    }
-
-    // 사진 찍은 후 이미지를 파일로 저장. 파일명은 현재 날짜와 시간
-    @Throws(IOException::class)
-    private fun createImageFile() : File {
-        val timeStamp : String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
-        val storageDir : File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-        return File.createTempFile(
-            "JPEG_${timeStamp}_",
-            ".jpg",
-            storageDir
-        ).apply{
-            currentPhotoPath = absolutePath
-        }
-    }
-
-    // 카메라 호출
-    fun startCapture(){
-        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
-            takePictureIntent.resolveActivity(packageManager)?.also {
-                val photoFile: File? = try{
-                    createImageFile()
-                }catch(ex:IOException){
-                    null
-                }
-                photoFile?.also{
-                    val photoURI : Uri = FileProvider.getUriForFile(
-                        this,
-                        "org.Photy.photy.fileprovider",
-                        it
-                    )
-                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
-                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
-                }
-            }
-        }
-    }
-/*
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        img_picture=findViewById(R.id.img_picture)
-        if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK){
-            val file = File(currentPhotoPath)
-            if (Build.VERSION.SDK_INT < 28) {
-                val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, Uri.fromFile(file))
-                img_picture.setImageBitmap(bitmap)
-            }
-            else{
-                val decode = ImageDecoder.createSource(this.contentResolver,
-                    Uri.fromFile(file))
-                val bitmap = ImageDecoder.decodeBitmap(decode)
-                img_picture.setImageBitmap(bitmap)
-            }
-        }
-    }
-*/
 }
