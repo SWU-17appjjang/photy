@@ -32,6 +32,12 @@
         <item name="android:fontFamily">@font/godom</item>
     </style>
 
+    <!-- 업로드 툴바 폰트 및 색상 지정 -->
+    <style name="UploadToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:fontFamily">@font/godom</item>
+        <item name="color">@color/ourBlue</item>
+    </style>
+
     <!-- Splash Screen theme.-->
     <style name="Splash" parent="Theme.AppCompat.Light.NoActionBar">
     </style>

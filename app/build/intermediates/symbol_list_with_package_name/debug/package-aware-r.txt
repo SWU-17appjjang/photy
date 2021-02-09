@@ -1584,7 +1584,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
-drawable btn1_
+drawable btn1
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -1624,6 +1624,9 @@ drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_account
+drawable ic_baseline_file_upload_24
+drawable ic_cancle
+drawable ic_home
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_logout
@@ -1634,6 +1637,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_signout
+drawable ic_upload
 drawable lightening
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -1664,6 +1668,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable popo
 drawable splash_logo
 drawable test_custom_background
 drawable tooltip_frame_dark
@@ -1766,7 +1771,10 @@ id beginning
 id blocking
 id bottom
 id bounce
+id btn_home
 id btn_picture
+id btn_upload
+id button
 id buttonPanel
 id cache_measures
 id cancel_action
@@ -2240,6 +2248,7 @@ layout text_view_with_theme_line_height
 layout text_view_without_line_height
 menu crop_image_menu
 menu main_drawer_navigation
+menu menu_upload
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
@@ -2885,6 +2894,7 @@ style ThemeOverlay_MaterialComponents_Toolbar_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Surface
 style ThemeOverlayColorAccentRed
 style ToolbarTheme
+style UploadToolbarTheme
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid
 style Widget_AppCompat_ActionBar_TabBar

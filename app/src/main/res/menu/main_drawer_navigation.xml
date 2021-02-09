@@ -14,6 +14,6 @@
         />
     <item android:id = "@+id/maker"
     android:icon = "@drawable/ic_maker"
-    android:title = "About Photter"
+    android:title = "About PoPo"
     />
 </menu>

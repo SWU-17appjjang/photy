@@ -189,6 +189,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 val error = result.error
             }
         }
+
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
