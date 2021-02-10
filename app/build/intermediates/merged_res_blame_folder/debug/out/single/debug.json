@@ -1,202 +1,210 @@
 [
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\menu_main_drawer_navigation.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\menu\\main_drawer_navigation.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_upload.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\drawable\\ic_upload.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\layout\\activity_splash.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\layout\\activity_splash.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\font_godob.ttf.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\font\\godob.ttf"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_btn1.png.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\drawable\\btn1.png"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_file_upload_24.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\drawable\\ic_baseline_file_upload_24.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_toolbar.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\layout\\main_toolbar.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_drawer_header.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\layout\\main_drawer_header.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\font_default_font.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\font\\default_font.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_layout.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\layout\\main_layout.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_epagee.png.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\drawable-v24\\epagee.png"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_intro3.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\layout\\fragment_intro3.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_splash_logo.png.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\drawable-v24\\splash_logo.png"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\layout\\activity_login.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_cancle.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\drawable\\ic_cancle.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_lightening.png.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\drawable\\lightening.png"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_upload.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\layout\\activity_upload.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_beam.png.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\drawable-v24\\beam.png"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_account.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\drawable\\ic_account.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_upload.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\layout\\activity_upload.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_drawer_header.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\layout\\main_drawer_header.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_layout.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\layout\\main_layout.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_logout.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\drawable\\ic_logout.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_file_upload_24.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\drawable\\ic_baseline_file_upload_24.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_intro2.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\layout\\fragment_intro2.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_toolbar.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\layout\\main_toolbar.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_indicator_selected.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\drawable\\indicator_selected.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\font_godom.ttf.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\font\\godom.ttf"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_menu_white.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\drawable\\ic_menu_white.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\xml_file_paths.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\xml\\file_paths.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_intro3.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\layout\\fragment_intro3.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_popo.png.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\drawable-v24\\popo.png"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_upload.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\menu\\menu_upload.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_popo.png.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\drawable-v24\\popo.png"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_signout.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\drawable\\ic_signout.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_intro_slider.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\layout\\activity_intro_slider.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_cancle.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\drawable\\ic_cancle.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\menu_main_drawer_navigation.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\menu\\main_drawer_navigation.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_upload.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\menu\\menu_upload.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_account.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\drawable\\ic_account.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_logout.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\drawable\\ic_logout.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_indicator_unselected.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\drawable\\indicator_unselected.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_nevigation_aboutus.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\layout\\activity_nevigation_aboutus.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_lightening.png.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\drawable\\lightening.png"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_signout.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\drawable\\ic_signout.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_intro2.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\layout\\fragment_intro2.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\font_godom.ttf.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\font\\godom.ttf"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_intro_slider.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\layout\\activity_intro_slider.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_maker.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\drawable\\ic_maker.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_home.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\drawable\\ic_home.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\font_default_font.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\font\\default_font.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_epage.png.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\drawable-v24\\epage.png"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_indicator_unselected.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\drawable\\indicator_unselected.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_beam.png.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\drawable-v24\\beam.png"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\xml_file_paths.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\xml\\file_paths.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_epagee.png.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\drawable-v24\\epagee.png"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_photter_icon.png.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\drawable\\photter_icon.png"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_nevigation_withdrawal.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\layout\\activity_nevigation_withdrawal.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_intro1.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\layout\\fragment_intro1.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_photter_icon.png.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\drawable\\photter_icon.png"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_home.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\drawable\\ic_home.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_upload.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\drawable\\ic_upload.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_intro1.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\layout\\fragment_intro1.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\font_godob.ttf.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\font\\godob.ttf"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_indicator_selected.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\drawable\\indicator_selected.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_menu_white.xml.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\drawable\\ic_menu_white.xml"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_maker.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\drawable\\ic_maker.xml"
     },
     {
-        "merged": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_splash_logo.png.flat",
-        "source": "C:\\Users\\lee sangjin\\AndroidStudioProjects\\photy\\app\\src\\main\\res\\drawable-v24\\splash_logo.png"
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_epage.png.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\drawable-v24\\epage.png"
+    },
+    {
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable_btn1.png.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\drawable\\btn1.png"
+    },
+    {
+        "merged": "C:\\Users\\dksle\\photy\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\dksle\\photy\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     }
 ]

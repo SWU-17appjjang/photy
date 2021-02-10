@@ -1035,6 +1035,7 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color gray
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color material_blue_grey_800
@@ -1737,6 +1738,7 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
+id account
 id action0
 id action_bar
 id action_bar_activity_content
@@ -1781,8 +1783,10 @@ id blocking
 id bottom
 id bounce
 id btn_home
+id btn_no
 id btn_picture
 id btn_upload
+id btn_withdrawal
 id buttonPanel
 id cache_measures
 id cancel_action
@@ -1956,7 +1960,6 @@ id mtrl_picker_title_text
 id multiply
 id navigation_header_container
 id never
-id nickname
 id noScroll
 id none
 id normal
@@ -2022,7 +2025,6 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
-id signout
 id sin
 id skipCollapsed
 id slide
@@ -2071,6 +2073,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
+id textView2
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter
@@ -2107,6 +2110,7 @@ id visible
 id vpIntroSlider
 id wide
 id withText
+id withdrawal
 id withinBounds
 id wrap
 id wrap_content
@@ -2175,6 +2179,8 @@ layout abc_tooltip
 layout activity_intro_slider
 layout activity_login
 layout activity_main
+layout activity_nevigation_aboutus
+layout activity_nevigation_withdrawal
 layout activity_splash
 layout activity_upload
 layout crop_image_activity

@@ -4,7 +4,7 @@
         android:icon = "@drawable/ic_logout"
         android:title = "로그아웃"
         />
-    <item android:id = "@+id/signout"
+    <item android:id = "@+id/withdrawal"
         android:icon = "@drawable/ic_signout"
         android:title = "회원탈퇴"
         />
