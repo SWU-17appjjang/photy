@@ -14,6 +14,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.ActionBar
@@ -27,6 +28,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.TedPermission
@@ -47,6 +49,8 @@ import java.util.*
 import kotlin.jvm.Throws
 
 
+
+
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var firebaseAuth: FirebaseAuth
 
@@ -56,7 +60,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     lateinit var img_picture : ImageView
 
     lateinit var btn_upload: Button
-    var fbStorage: FirebaseStorage? = null
+
+    //계정 보여주는 텍스트 뷰
+    lateinit var user_email :TextView
 
     // 이전 클릭 시간 (뒤로가기를 위한)
     private var lastTimeBackPressed:Long=-1500
@@ -64,6 +70,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var activity: MainActivity
     private lateinit var googleSignInClient: GoogleSignInClient
 
+    // 파이어베이스 이미지 다운로드
+    var fbAuth : FirebaseAuth? = null
+    var fbFireStore : FirebaseFirestore? = null
+    var fbStorage: FirebaseStorage? = null
 
     override fun onCreate(savedInstanceState: Bundle?)  {
         super.onCreate(savedInstanceState)
@@ -78,11 +88,27 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         settingPermission() // 카메라 권한체크 시작
 
+        //이미지 파이어베이스 다운 관련 스토리지 이니셜라이즈
+        fbStorage = FirebaseStorage.getInstance()
+        fbAuth = FirebaseAuth.getInstance()
+        fbFireStore = FirebaseFirestore.getInstance()
+
+        if(true){
+            var userInfo = ModelFriends()
+
+            userInfo.uid = fbAuth?.uid
+            userInfo.userId = fbAuth?.currentUser?.email
+
+            fbFireStore?.collection("users")?.document(fbAuth?.uid.toString())?.set(userInfo)
+            //Toast.makeText(this@MainActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
+        }
+
         btn_picture=findViewById(R.id.btn_picture) //사진 찍기 버튼
         btn_picture.setOnClickListener {
             startCapture()
         }
     }
+
 
     //카메라 권한 체크
     fun settingPermission(){
@@ -97,14 +123,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
         }
         TedPermission.with(this)
-            .setPermissionListener(permis)
-            .setRationaleMessage("카메라 사진 권한 필요")
-            .setDeniedMessage("카메라 권한 요청 거부")
-            .setPermissions(
-                android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                .setPermissionListener(permis)
+                .setRationaleMessage("카메라 사진 권한 필요")
+                .setDeniedMessage("카메라 권한 요청 거부")
+                .setPermissions(
+                        android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
 //                android.Manifest.permission.READ_EXTERNAL_STORAGE,
-                android.Manifest.permission.CAMERA)
-            .check()
+                        android.Manifest.permission.CAMERA)
+                .check()
     }
 
     // 카메라 호출
@@ -213,6 +239,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         var storageRef = fbStorage?.reference?.child("images")?.child(imgFileName)
 
         storageRef?.putFile(uriPhoto!!)?.addOnSuccessListener {
+            storageRef.downloadUrl.addOnSuccessListener { uri ->
+                var userInfo = ModelFriends()
+
+                userInfo.imageUrl = uri.toString()
+
+                fbFireStore?.collection("users")?.document(fbAuth?.uid.toString())?.update("imageUrl", userInfo.imageUrl.toString())
+            }
+
+
+
             Toast.makeText(img_picture.context, "이미지를 업로드했습니다!", Toast.LENGTH_SHORT).show()
             var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
@@ -225,9 +261,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean { // 상단 메뉴 클릭시
+        var userInfo = ModelFriends()
+        userInfo.uid = fbAuth?.uid
+        userInfo.userId = fbAuth?.currentUser?.email
+
+        var email = userInfo.userId
+
         when(item.itemId){
             android.R.id.home->{ // 메뉴 버튼
                 main_drawer_layout.openDrawer(GravityCompat.START)    // 네비게이션 드로어 열기
+                user_email = findViewById(R.id.user_email)
+                user_email.text = email
             }
         }
         return super.onOptionsItemSelected(item)
@@ -236,9 +280,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean { // 메뉴 바 버튼 클릭 시
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build()
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build()
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
         firebaseAuth = FirebaseAuth.getInstance()

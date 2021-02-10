@@ -70,4 +70,7 @@ dependencies {
     //튜토리얼
     implementation "androidx.viewpager2:viewpager2:1.0.0"
 
+    // 파이어베이스 다운로드 사용
+    implementation 'com.google.firebase:firebase-firestore:19.0.0'
+
 }
