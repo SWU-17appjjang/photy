@@ -32,6 +32,7 @@ import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_splash.*
+import kotlinx.android.synthetic.main.activity_upload.*
 import kotlinx.android.synthetic.main.main_toolbar.*
 import java.io.File
 import java.io.IOException
@@ -195,8 +196,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 result.uri?.let {
                     img_picture.setImageBitmap(result.bitmap)
                     img_picture.setImageURI(result.uri)
-                    funImageUpload(result.uri)
 
+                    // 업로드 버튼 클릭시 Firebase에 사진 업로드
+                    btn_upload.setOnClickListener {
+                        funImageUpload(result.uri)
+                        setContentView(R.layout.main_layout)
+                    }
+
+                    // 홈버튼 클릭시 main 레이아웃으로 회귀
+                    btn_home.setOnClickListener {
+                        setContentView(R.layout.main_layout)
+                    }
                 }
             } else if (resultCode === CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 val error = result.error
