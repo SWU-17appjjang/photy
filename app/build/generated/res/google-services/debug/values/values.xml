@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">743039944962-ig9gnta5283ihmv2okc5t1pk3mqoed3j.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">743039944962</string>
+    <string name="google_api_key" translatable="false">AIzaSyBmx8G8MkF1Kj13XK2PVC3SNwvom3vQZGA</string>
+    <string name="google_app_id" translatable="false">1:743039944962:android:1841b02a5f387f170bda1b</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBmx8G8MkF1Kj13XK2PVC3SNwvom3vQZGA</string>
+    <string name="google_storage_bucket" translatable="false">poty-test.appspot.com</string>
+    <string name="project_id" translatable="false">poty-test</string>
+</resources>

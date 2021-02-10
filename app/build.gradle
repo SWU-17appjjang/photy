@@ -63,4 +63,8 @@ dependencies {
 
     //이미지 Crop 사용
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+
+    //파이어베이스 업로드 사용
+    implementation 'com.google.firebase:firebase-storage:19.0.0'
+
 }

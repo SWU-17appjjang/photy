@@ -11,6 +11,7 @@ import android.os.Environment
 import android.provider.MediaStore
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
@@ -24,11 +25,13 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.storage.FirebaseStorage
 import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.TedPermission
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_splash.*
 import kotlinx.android.synthetic.main.main_toolbar.*
 import java.io.File
 import java.io.IOException
@@ -48,6 +51,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     lateinit var currentPhotoPath : String
     lateinit var btn_picture : Button
     lateinit var img_picture : ImageView
+
+    lateinit var btn_upload: Button
+    var fbStorage: FirebaseStorage? = null
 
     override fun onCreate(savedInstanceState: Bundle?)  {
         super.onCreate(savedInstanceState)
@@ -161,6 +167,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_upload)
 
         img_picture = findViewById(R.id.img_picture)
+
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
             val file = File(currentPhotoPath)
             val selectedUri = Uri.fromFile(file)
@@ -174,8 +181,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 )
                 val bitmap = ImageDecoder.decodeBitmap(decode)
                 launchImageCrop(selectedUri)
+
             }
         }
+
+
+        btn_upload =findViewById(R.id.btn_upload)
 
         // 크롭한 이미지를 이미지 뷰에 나타냄
         if (requestCode === CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
@@ -184,6 +195,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 result.uri?.let {
                     img_picture.setImageBitmap(result.bitmap)
                     img_picture.setImageURI(result.uri)
+                    funImageUpload(result.uri)
+
                 }
             } else if (resultCode === CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 val error = result.error
@@ -192,6 +205,23 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
     }
+
+    private fun funImageUpload(uriPhoto: Uri){
+        fbStorage = FirebaseStorage.getInstance()
+
+        var timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
+        var imgFileName = "JPEG_${timeStamp}_"
+        var storageRef = fbStorage?.reference?.child("images")?.child(imgFileName)
+
+        storageRef?.putFile(uriPhoto!!)?.addOnSuccessListener {
+            Toast.makeText(img_picture.context, "이미지를 업로드했습니다!", Toast.LENGTH_SHORT).show()
+        }
+        storageRef?.putFile(uriPhoto!!)?.addOnFailureListener{
+            Toast.makeText(img_picture.context, "이미지를 업로드하지 못했습니다!", Toast.LENGTH_SHORT).show()
+
+        }
+    }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
@@ -219,6 +249,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         } else{
             super.onBackPressed()
         }
+
     }
 
     private fun signOut(){//로그아웃

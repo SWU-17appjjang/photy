@@ -1668,6 +1668,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable photter_icon
 drawable popo
 drawable splash_logo
 drawable test_custom_background
@@ -1727,7 +1728,6 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
-id account
 id action0
 id action_bar
 id action_bar_activity_content
@@ -1774,7 +1774,6 @@ id bounce
 id btn_home
 id btn_picture
 id btn_upload
-id button
 id buttonPanel
 id cache_measures
 id cancel_action
@@ -1844,7 +1843,6 @@ id easeIn
 id easeInOut
 id easeOut
 id edit_query
-id email
 id end
 id end_padder
 id enterAlways
@@ -1972,6 +1970,7 @@ id pathRelative
 id peekHeight
 id percent
 id photoGridView
+id photterScore
 id pin
 id position
 id postLayout
