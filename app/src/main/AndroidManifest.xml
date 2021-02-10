@@ -20,15 +20,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Photy">
         <activity android:name=".LoginActivity"></activity>
-        <activity
-            android:name=".SplashActivity"
-            android:theme="@style/Splash">
+
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".IntroSliderActivity"/>
+
         <activity android:name=".MainActivity" />
 
         //이미지 크롭

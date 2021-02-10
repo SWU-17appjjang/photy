@@ -67,4 +67,7 @@ dependencies {
     //파이어베이스 업로드 사용
     implementation 'com.google.firebase:firebase-storage:19.0.0'
 
+    //튜토리얼
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+
 }

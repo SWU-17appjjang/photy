@@ -11,4 +11,10 @@
     <!--우리 메인 컬러-->
     <color name="ourBlue">#1e20a1</color>
     <color name="ourYellow">#efd31e</color>
+
+    <!--튜토리얼 컬러-->
+    <color name="colorPrimary">#E21D7C</color>
+    <color name="colorPrimaryDark">#AD1457</color>
+    <color name="colorAccent">#F57C00</color>
+
 </resources>

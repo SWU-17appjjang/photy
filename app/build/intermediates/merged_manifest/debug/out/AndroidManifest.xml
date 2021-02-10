@@ -33,15 +33,14 @@
         android:testOnly="true"
         android:theme="@style/Theme.Photy" >
         <activity android:name="org.Photy.photy.LoginActivity" />
-        <activity
-            android:name="org.Photy.photy.SplashActivity"
-            android:theme="@style/Splash" >
+        <activity android:name="org.Photy.photy.SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="org.Photy.photy.IntroSliderActivity" />
         <activity android:name="org.Photy.photy.MainActivity" />
         //이미지 크롭
         <activity
