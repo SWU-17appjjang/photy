@@ -30,7 +30,7 @@
         <ImageView
             android:layout_width="29dp"
             android:layout_height="match_parent"
-            android:background="@drawable/photter_icon"
+            android:background="@drawable/ic_photter"
             android:layout_margin="2dp"
             />
 

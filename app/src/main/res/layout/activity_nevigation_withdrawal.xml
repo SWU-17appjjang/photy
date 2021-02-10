@@ -14,11 +14,11 @@
         tools:ignore="MissingConstraints">
 
         <ImageView
-            android:layout_width="121dp"
-            android:layout_height="141dp"
-            app:srcCompat="@drawable/popo"
+            android:layout_width="149dp"
+            android:layout_height="165dp"
             android:layout_marginTop="100dp"
             android:layout_marginBottom="50dp"
+            app:srcCompat="@drawable/popo_trouble"
             tools:layout_editor_absoluteX="145dp"
             tools:layout_editor_absoluteY="74dp" />
 

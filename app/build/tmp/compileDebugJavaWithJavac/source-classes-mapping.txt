@@ -1,2 +1,0 @@
-org/Photy/photy/BuildConfig.java
- org.Photy.photy.BuildConfig

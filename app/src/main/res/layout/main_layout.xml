@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="15dp"
-        android:background="@drawable/btn1"
+        android:background="@drawable/ic_upload"
         />
 
 
