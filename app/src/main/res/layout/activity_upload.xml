@@ -51,31 +51,20 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:gravity="center"
         >
+
         <ImageView
             android:id="@+id/img_picture"
             android:layout_width="400dp"
             android:layout_height="400dp"
-            android:layout_margin="10dp"
-            />
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Button" />
-    </LinearLayout>
-
-    <!--별 다른 기능 구현하지 않는다면 삭제 가능-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
 
     </LinearLayout>
+
 
 
 
