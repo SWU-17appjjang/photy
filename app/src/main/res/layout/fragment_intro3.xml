@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:padding="30dp"
     android:gravity="center"
-    android:background="#E21D7C">
+    android:background="#D24C75">
 
     <ImageView
         android:layout_width="200dp"
@@ -33,7 +33,7 @@
         android:fontFamily="@font/godom"
         android:textSize="24sp"
         android:gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:textStyle="bold"
         />
 

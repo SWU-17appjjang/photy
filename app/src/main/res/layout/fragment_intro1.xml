@@ -21,13 +21,13 @@
         android:text="@string/text_intro1"
         android:textColor="@android:color/white"
         android:fontFamily="@font/godom"
-        android:textSize="18sp"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="@string/text_intro1_2"
         android:textColor="@android:color/white"
@@ -48,7 +48,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="@string/desc_intro1_2"
         android:textColor="@android:color/white"

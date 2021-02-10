@@ -26,12 +26,24 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:fontFamily="@font/godom"
             android:gravity="center_horizontal"
+            android:text="앗! 포터님"
             android:textColor="@color/black"
-            android:text="앗! 포터님 \n앞으로 포티를 이용하지 않으실 건가요?"
-            android:textSize="23dp"
+            android:textSize="25dp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="120dp"
+            android:fontFamily="@font/godom"
+            android:gravity="center_horizontal"
+            android:text="앞으로 포티를 이용하지 않으실 건가요?"
+            android:textColor="@color/black"
+            android:textSize="23dp"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button

@@ -24,6 +24,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/ourYellow"
         >
 
         <Button
@@ -48,6 +49,26 @@
             android:layout_gravity="center"
             android:layout_weight="1"/>
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="포터님이 놓치고 싶지 않은 이 순간이"
+        android:gravity="center"
+        android:fontFamily="@font/godom"
+        android:layout_marginTop="50dp"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="곧, 전세계의 포터들과 공유됩니다."
+        android:gravity="center"
+        android:fontFamily="@font/godom"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"/>
 
     <LinearLayout
         android:layout_width="match_parent"

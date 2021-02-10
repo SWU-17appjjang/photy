@@ -32,6 +32,7 @@
             android:layout_height="50dp"
             android:freezesText="true"
             android:gravity="center_vertical"
+            android:textColor="@color/ourBlue"
             android:text="counts"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"

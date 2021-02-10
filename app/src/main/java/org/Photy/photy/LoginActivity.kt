@@ -3,9 +3,13 @@ package org.Photy.photy
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
 import android.text.SpannableString
+import android.text.Spanned
 import android.text.style.ForegroundColorSpan
+import android.text.style.RelativeSizeSpan
+import android.text.style.StyleSpan
 import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
@@ -36,8 +40,9 @@ class LoginActivity : AppCompatActivity() {
 
         // 어플 소개글 색상 설정
         var info : TextView = findViewById(R.id.title)
-        var spannableString = SpannableString("지금 이 순간, 사진을 공유하다")
-        spannableString.setSpan(ForegroundColorSpan(Color.parseColor("#1e20a1")), 9, 15, spannableString.length )
+        var spannableString = SpannableString("순간을 놓치지 않는 사진 공유 어플")
+        spannableString.setSpan(ForegroundColorSpan(Color.parseColor("#1e20a1")), 11, 16, spannableString.length )
+        spannableString.setSpan(StyleSpan(Typeface.BOLD), 11, 16, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         info.text = spannableString
 
 
