@@ -55,7 +55,7 @@ class IntroSliderActivity : AppCompatActivity() {
         })
 
         tvSkip.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
 
@@ -65,7 +65,7 @@ class IntroSliderActivity : AppCompatActivity() {
             if (position < fragmentList.lastIndex) {
                 vpIntroSlider.currentItem = position + 1
             } else {
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, LoginActivity::class.java))
                 finish()
             }
         }
