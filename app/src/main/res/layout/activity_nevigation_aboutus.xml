@@ -1,7 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent" 
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="안녕하세요! 저희는 "
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:fontFamily="@font/godom"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Team "
+            android:textSize="23dp"
+            android:textColor="@color/ourBlue"
+            android:fontFamily="@font/godom"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PoPo"
+            android:textSize="23dp"
+            android:textColor="@color/ourYellow"
+            android:fontFamily="@font/godom"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 입니다."
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:fontFamily="@font/godom"
+            />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/easter"
+        android:layout_width="350dp"
+        android:layout_height="407dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/member" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/btn_backhome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="메인 메뉴로 돌아가기"
+        android:textColor="@color/gray"
+        android:fontFamily="@font/godom"
+        android:textSize="15dp"
+        android:background="#00ff0000"
+        />
+
+
+        
+</LinearLayout>

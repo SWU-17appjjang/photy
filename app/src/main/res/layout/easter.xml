@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="개발자가 된다면 꼭 만들고 싶었던 이스터 페이지 ㅋ"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/ourYellow"
+       />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="283dp"
+        android:src="@drawable/woori" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="새벽 2시 37분까지 코딩했던 우리들,,,^^;;\n 이땐 이게 끝인줄 알았지,,\n
+ 누가 알았을까,, 6시에 잘거란걸,,"
+            android:textColor="@color/ourBlue" />
+        <ImageView
+            android:layout_width="165dp"
+            android:layout_height="160dp"
+            android:src="@drawable/easter" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="PS. 개상 싸랑해!!!!!!!!!!!!!"
+        android:textStyle="italic"
+        android:textColor="#ff0000" />
+
+    <Button
+        android:id="@+id/btn_backhome2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이스터 페이지 끝내고\n홈으로 돌아가기" />
+</LinearLayout>
+
+
+
+
+

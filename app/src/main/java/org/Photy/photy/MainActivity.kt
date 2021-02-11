@@ -35,9 +35,11 @@ import com.gun0912.tedpermission.TedPermission
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_nevigation_aboutus.*
 import kotlinx.android.synthetic.main.activity_nevigation_withdrawal.*
 import kotlinx.android.synthetic.main.activity_splash.*
 import kotlinx.android.synthetic.main.activity_upload.*
+import kotlinx.android.synthetic.main.easter.*
 import kotlinx.android.synthetic.main.main_toolbar.*
 import java.io.File
 import java.io.IOException
@@ -93,6 +95,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         fbAuth = FirebaseAuth.getInstance()
         fbFireStore = FirebaseFirestore.getInstance()
 
+        // 로그인
         if(true){
             var userInfo = ModelFriends()
 
@@ -179,7 +182,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .start(this)
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) { // 촬영된 이미지 handling
         super.onActivityResult(requestCode, resultCode, data)
         setContentView(R.layout.activity_upload)
 
@@ -231,7 +234,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     }
 
-    private fun funImageUpload(uriPhoto: Uri){
+    private fun funImageUpload(uriPhoto: Uri){ // 편집된 이미지 Firebase에 연동
         fbStorage = FirebaseStorage.getInstance()
 
         var timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
@@ -246,8 +249,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                 fbFireStore?.collection("users")?.document(fbAuth?.uid.toString())?.update("imageUrl", userInfo.imageUrl.toString())
             }
-
-
 
             Toast.makeText(img_picture.context, "이미지를 업로드했습니다!", Toast.LENGTH_SHORT).show()
             var intent = Intent(this, MainActivity::class.java)
@@ -288,9 +289,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         firebaseAuth = FirebaseAuth.getInstance()
 
         when(item.itemId){
-            R.id.withdrawal-> revokeAccess()
-            R.id.logout-> signOut()
-            R.id.maker-> Toast.makeText(this,"음하하 우리가 만들었지",Toast.LENGTH_SHORT).show()
+            R.id.withdrawal-> revokeAccess() // 회원 탈퇴
+            R.id.logout-> signOut() // 로그아웃
+            R.id.maker-> aboutUs() // 개발자 정보
         }
         return false
     }
@@ -306,6 +307,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 finish()
             lastTimeBackPressed= currentTimeMillis()
             Toast.makeText(this,"이전 버튼을 한 번 더 누르면 종료됩니다",Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun aboutUs(){ // 개발자 소개
+        setContentView(R.layout.activity_nevigation_aboutus) //aboutus 레이아웃으로 변경
+
+        // 돌아가기 버튼 클릭시 메인 화면으로 회귀
+        btn_backhome.setOnClickListener {
+            var intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        // 이스터 에그
+        easter.setOnClickListener {
+            setContentView(R.layout.easter) //aboutus 레이아웃으로 변경
+            // 돌아가기 버튼 클릭시 메인 화면으로 회귀
+            btn_backhome2.setOnClickListener {
+                var intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 
