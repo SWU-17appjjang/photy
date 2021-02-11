@@ -314,7 +314,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         firebaseAuth.signOut()
         Toast.makeText(this,"로그아웃 하셨습니다.",Toast.LENGTH_SHORT).show()
         var intent = Intent(this, LoginActivity::class.java)
-        startActivity(intent)
+        //재로그인 시 자동로그인 방지
+        googleSignInClient.signOut().addOnCompleteListener {
+            startActivity(intent)
+        }
 
     }
 
@@ -330,26 +333,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         btn_withdrawal.setOnClickListener{
             firebaseAuth.currentUser?.delete()
             Toast.makeText(this,"회원탈퇴 하셨습니다.",Toast.LENGTH_SHORT).show()
-            finish()
+            var intent = Intent(this, LoginActivity::class.java)
+            //재로그인 시 자동로그인 방지
+            googleSignInClient.revokeAccess().addOnCompleteListener {
+                startActivity(intent)
+            }
         }
     }
 
-    /*
-    override fun onCreateView(name: String, context: Context, attrs: AttributeSet): View? {
-        return super.onCreateView(name, context, attrs)
-
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build()
-        googleSignInClient = GoogleSignIn.getClient(this, gso)
-
-        firebaseAuth = FirebaseAuth.getInstance()
-        //재로그인 시 자동로그인 방지
-        googleSignInClient.signOut().addOnCompleteListener {
-            activity.finish()
-        }
-    }
-     */
 
 }
