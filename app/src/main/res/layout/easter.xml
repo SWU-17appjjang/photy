@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="개발자가 된다면 꼭 만들고 싶었던 이스터 페이지 ㅋ"
+        android:text="개발자가 된다면 꼭 만들고 싶었던 이스터 에그 ㅋ"
         android:textStyle="bold"
         android:textSize="20dp"
         android:textColor="@color/ourYellow"
