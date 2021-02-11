@@ -1,6 +1,8 @@
 package org.Photy.photy
 
+import VerticalItemDecorator
 import android.app.Activity
+import android.app.Application
 import android.content.Intent
 import android.graphics.ImageDecoder
 import android.net.Uri
@@ -12,10 +14,7 @@ import android.provider.MediaStore
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.ActionBar
@@ -24,6 +23,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -41,6 +41,7 @@ import kotlinx.android.synthetic.main.activity_nevigation_withdrawal.*
 import kotlinx.android.synthetic.main.activity_splash.*
 import kotlinx.android.synthetic.main.activity_upload.*
 import kotlinx.android.synthetic.main.easter.*
+import kotlinx.android.synthetic.main.main_layout.*
 import kotlinx.android.synthetic.main.main_toolbar.*
 import java.io.File
 import java.io.IOException
@@ -79,6 +80,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     var fbFireStore : FirebaseFirestore? = null
     var fbStorage: FirebaseStorage? = null
 
+    // 데이터 리스트
+    private var userList = arrayListOf<DataVo> (
+        DataVo("account1","popo_normal"),
+        DataVo("account2","popo_trouble"),
+        DataVo("account3",""),
+        DataVo("account4","")
+    )
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?)  {
         super.onCreate(savedInstanceState)
@@ -111,10 +120,22 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             //Toast.makeText(this@MainActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
         }
 
+        // Adapter 선언
+        val mAdapter = CustomAdapter(this,userList)
+        recycler_view.adapter = mAdapter
+
+        // 3개의 열을 갖는 그리드 레이아웃 매니저를 설정, 기본값은 vertical
+        val gridLayoutManager = GridLayoutManager(applicationContext, 3)
+        recycler_view.layoutManager = gridLayoutManager
+
+        // 세로 간격 설정
+        recycler_view.addItemDecoration(VerticalItemDecorator(20))
+
         btn_picture=findViewById(R.id.btn_picture) //사진 찍기 버튼
         btn_picture.setOnClickListener {
             startCapture()
         }
+
     }
 
 
@@ -366,6 +387,4 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
         }
     }
-
-
 }

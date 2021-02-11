@@ -73,4 +73,7 @@ dependencies {
     // 파이어베이스 다운로드 사용
     implementation 'com.google.firebase:firebase-firestore:19.0.0'
 
+    // GridView 사용
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
 }

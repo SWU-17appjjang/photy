@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/white"
+        android:background="@color/ourYellow"
+        android:text=" 대한민국, 서울 "
+        android:textSize="20dp"
+        android:fontFamily="@font/godom"
+        />
+
+    <TextView
+        android:id="@+id/upload_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:text="2021년 02월 01일"
+        android:textSize="30dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/godob"/>
+
+    <TextView
+        android:id="@+id/upload_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:text="12:54:25 PM"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/godob"/>
+
+    <ImageView
+        android:id="@+id/detail_img"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_margin="20dp"
+        />
+
+    <Button
+        android:layout_width="114dp"
+        android:layout_height="93dp"
+        android:layout_gravity="center"
+        android:background="@drawable/lightening" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="#00ff0000"
+        android:textColor="@color/gray"
+        android:fontFamily="@font/godom"
+        android:text="신고하기" />
+
+
+</LinearLayout>
