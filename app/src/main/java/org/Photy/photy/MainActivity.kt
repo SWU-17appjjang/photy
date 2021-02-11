@@ -16,6 +16,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -47,6 +48,7 @@ import java.lang.System.currentTimeMillis
 import java.nio.channels.AsynchronousFileChannel.open
 import java.nio.channels.DatagramChannel.open
 import java.text.SimpleDateFormat
+import java.time.LocalDateTime
 import java.util.*
 import kotlin.jvm.Throws
 
@@ -77,6 +79,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     var fbFireStore : FirebaseFirestore? = null
     var fbStorage: FirebaseStorage? = null
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?)  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -101,6 +104,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             userInfo.uid = fbAuth?.uid
             userInfo.userId = fbAuth?.currentUser?.email
+
+            userInfo.dateAndtime = LocalDateTime.now() //업로드 시간 날짜
 
             fbFireStore?.collection("users")?.document(fbAuth?.uid.toString())?.set(userInfo)
             //Toast.makeText(this@MainActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
