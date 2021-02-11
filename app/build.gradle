@@ -76,4 +76,7 @@ dependencies {
     // GridView 사용
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
+    // 파이어베이스 실시간 사용
+    implementation 'com.google.firebase:firebase-database:16.0.5'
+
 }

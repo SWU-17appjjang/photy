@@ -29,6 +29,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.gun0912.tedpermission.PermissionListener
@@ -43,6 +45,7 @@ import kotlinx.android.synthetic.main.activity_upload.*
 import kotlinx.android.synthetic.main.easter.*
 import kotlinx.android.synthetic.main.main_layout.*
 import kotlinx.android.synthetic.main.main_toolbar.*
+import org.w3c.dom.Text
 import java.io.File
 import java.io.IOException
 import java.lang.System.currentTimeMillis
@@ -68,6 +71,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     //계정 보여주는 텍스트 뷰
     lateinit var user_email :TextView
+
+
+    // 빔 갯수 연동
+    lateinit var beamCount : TextView
+
+    // 이미지 업로드한 갯수 연동
+    lateinit var imgCount : TextView
+
+
+    //실시간 데이터베이스
+    lateinit var mDatabase: DatabaseReference
 
     // 이전 클릭 시간 (뒤로가기를 위한)
     private var lastTimeBackPressed:Long=-1500
@@ -118,7 +132,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             fbFireStore?.collection("users")?.document(fbAuth?.uid.toString())?.set(userInfo)
             //Toast.makeText(this@MainActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
+
+
+            beamCount = findViewById(R.id.light_counts)
+
+
+            beamCount.text = userInfo.beam.toString()
+
+
+
         }
+
+
+
+
 
         // Adapter 선언
         val mAdapter = CustomAdapter(this,userList)
@@ -274,6 +301,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 userInfo.imageUrl = uri.toString()
 
                 fbFireStore?.collection("users")?.document(fbAuth?.uid.toString())?.update("imageUrl", userInfo.imageUrl.toString())
+
+
+                mDatabase = FirebaseDatabase.getInstance().getReference()
+                mDatabase.child("user_image").push().setValue(userInfo.imageUrl)
             }
 
             Toast.makeText(img_picture.context, "이미지를 업로드했습니다!", Toast.LENGTH_SHORT).show()
@@ -299,6 +330,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 main_drawer_layout.openDrawer(GravityCompat.START)    // 네비게이션 드로어 열기
                 user_email = findViewById(R.id.user_email)
                 user_email.text = email
+
+                imgCount = findViewById(R.id.photterScore)
+                imgCount.text = userInfo.imgCount.toString()
             }
         }
         return super.onOptionsItemSelected(item)
