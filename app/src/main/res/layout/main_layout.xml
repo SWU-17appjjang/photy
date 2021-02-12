@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="00"
+            android:text="58"
             android:fontFamily="@font/godob"
             android:textSize="30dp"
             android:layout_marginRight="5dp"
@@ -71,7 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="00"
+            android:text="32"
             android:fontFamily="@font/godob"
             android:textSize="30dp"
             />
