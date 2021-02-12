@@ -9,6 +9,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_view.view.*
 
 
 class CustomAdapter(private val context: Context, private val dataList: ArrayList<DataVo>) :RecyclerView.Adapter<CustomAdapter.ItemViewHolder>(){
@@ -40,6 +43,7 @@ class CustomAdapter(private val context: Context, private val dataList: ArrayLis
 
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
+        /*
         private val userPhoto = itemView.findViewById<ImageView>(R.id.userImg)
         //private val userName = itemView.findViewById<ImageView>(R.id..userNameTxt) //우린 계정명 안나타냄
 
@@ -57,6 +61,7 @@ class CustomAdapter(private val context: Context, private val dataList: ArrayLis
                 userPhoto.setImageResource(R.mipmap.ic_launcher_round)
             }
         }
+         */
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType:Int) : ItemViewHolder {
@@ -64,7 +69,16 @@ class CustomAdapter(private val context: Context, private val dataList: ArrayLis
         return ItemViewHolder(view)
     }
 
+
+    // onCreateViewHolder에서 만든 view와 실제 데이터를 연결
     override fun onBindViewHolder(holder: ItemViewHolder,position: Int) {
+        var viewHolder = (holder as ItemViewHolder).itemView
+
+        // Task2 : 각 배열에 있는 데이터를 view 에 있는 요소에 연결하라.
+        viewHolder.userId.text = dataList[position].userId
+        Glide.with(viewHolder).load(dataList[position].imageUrl).into(viewHolder.imgUrl)
+
+        /*
         holder.bind(dataList[position], context)
 
 
@@ -83,6 +97,7 @@ class CustomAdapter(private val context: Context, private val dataList: ArrayLis
             Toast.makeText(view.context,"아이템 롱 클릭",Toast.LENGTH_SHORT).show()
             return@setOnLongClickListener true
         }
+         */
     }
 
 

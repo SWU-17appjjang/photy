@@ -1,3 +1,3 @@
 package org.Photy.photy
 
-class DataVo(val name:String, val photo:String)
+class DataVo(val userId:String, val imageUrl:String)

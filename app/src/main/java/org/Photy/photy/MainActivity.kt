@@ -10,10 +10,9 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
+import android.provider.ContactsContract
 import android.provider.MediaStore
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.Toolbar
@@ -24,6 +23,7 @@ import androidx.core.content.FileProvider
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -54,6 +54,7 @@ import java.nio.channels.DatagramChannel.open
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.jvm.Throws
 
 
@@ -72,13 +73,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     //계정 보여주는 텍스트 뷰
     lateinit var user_email :TextView
 
-
     // 빔 갯수 연동
     lateinit var beamCount : TextView
 
     // 이미지 업로드한 갯수 연동
     lateinit var imgCount : TextView
-
 
     //실시간 데이터베이스
     lateinit var mDatabase: DatabaseReference
@@ -95,12 +94,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     var fbStorage: FirebaseStorage? = null
 
     // 데이터 리스트
+    var users : ArrayList<DataVo> = arrayListOf()
+
+    /*
     private var userList = arrayListOf<DataVo> (
         DataVo("account1","popo_normal"),
         DataVo("account2","popo_trouble"),
         DataVo("account3",""),
         DataVo("account4","")
     )
+     */
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?)  {
@@ -133,22 +136,28 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             fbFireStore?.collection("users")?.document(fbAuth?.uid.toString())?.set(userInfo)
             //Toast.makeText(this@MainActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
 
-
             beamCount = findViewById(R.id.light_counts)
 
-
             beamCount.text = userInfo.beam.toString()
-
-
 
         }
 
 
+        // users의 문서를 불러온 뒤 DataVo으로 변환해 ArrayList에 담음
+        fbFireStore?.collection("users")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
+            // ArrayList 비워줌
+            users.clear()
+            for (snapshot in querySnapshot!!.documents) {
+                var item = snapshot.toObject(DataVo::class.java)
+                // Task1 : 각 uri , userId 를 객체 Arraylist 로 넣어라
+                //users.imgUrl = snapshot?.data!!["imgUri"].toString()
 
+            }
+        }
 
 
         // Adapter 선언
-        val mAdapter = CustomAdapter(this,userList)
+        val mAdapter = CustomAdapter(this,users)
         recycler_view.adapter = mAdapter
 
         // 3개의 열을 갖는 그리드 레이아웃 매니저를 설정, 기본값은 vertical
