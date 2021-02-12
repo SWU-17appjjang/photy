@@ -14,7 +14,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_view.view.*
 
 
-class CustomAdapter(private val context: Context, private val dataList: ArrayList<DataVo>) :RecyclerView.Adapter<CustomAdapter.ItemViewHolder>(){
+class CustomAdapter(private val context: Context, private val dataList: ArrayList<DataVo>,private val uidList: ArrayList<String>) :RecyclerView.Adapter<CustomAdapter.ItemViewHolder>(){
 
 
     var mPosition = 0
@@ -82,7 +82,10 @@ class CustomAdapter(private val context: Context, private val dataList: ArrayLis
 
             //open another activity on item click
             val intent = Intent(context,DetailActivity::class.java )
+
+            // 값 전달 - imageUrl 과 uidList
             intent.putExtra("imageUrl", dataList[position].imageUrl)
+            intent.putExtra("contentUid",uidList[position])
             context.startActivity(intent)
 
         }

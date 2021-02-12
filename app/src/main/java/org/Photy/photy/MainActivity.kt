@@ -63,8 +63,7 @@ import kotlin.jvm.Throws
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var firebaseAuth: FirebaseAuth
-
-
+    
     val REQUEST_IMAGE_CAPTURE = 1
     lateinit var currentPhotoPath : String
     lateinit var btn_picture : Button
@@ -97,21 +96,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     var fbFireStore : FirebaseFirestore? = null
     var fbStorage: FirebaseStorage? = null
 
-    // 데이터 리스트
+
+    // 데이터 리스트 - 전체 사진
     var users : ArrayList<DataVo> = arrayListOf()
 
+    // 데이터 리스트 - 좋아요를 위한 uid
+    var contentUidList: ArrayList<String> = arrayListOf()
 
-    /*
-    private var userList = arrayListOf<DataVo> (
-        DataVo("account1","popo_normal"),
-        DataVo("account2","popo_trouble"),
-        DataVo("account3",""),
-        DataVo("account4","")
-    )
-     */
+
 
     @RequiresApi(Build.VERSION_CODES.O)
-    override fun onCreate(savedInstanceState: Bundle?)  {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -131,12 +126,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
         // Adapter 선언
-        val mAdapter = CustomAdapter(this,users)
+        val mAdapter = CustomAdapter(this, users, contentUidList)
         recycler_view.adapter = mAdapter
 
+        // 유저 정보
+
+        var userInfo = ModelFriends()
+
         // 로그인
-        if(true){
-            var userInfo = ModelFriends()
+        if (true) {
 
             // 데이터베이스에서 아이디와 uid를 가져옴
             userInfo.uid = fbAuth?.uid
@@ -148,7 +146,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             //Toast.makeText(this@MainActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
 
             // 빔카운트 아이디와 연결
-            beamCount = findViewById(R.id.light_counts)
+            beamCount = findViewById(R.id.beam_counts)
 
             // 빔카운트 텍스트를 기존 값과 연결
             beamCount.text = userInfo.beam.toString()
@@ -156,19 +154,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
 
-
         // users의 문서를 불러온 뒤 DataVo으로 변환해 ArrayList에 담음
-        fbFireStore?.collection("users")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
-            // ArrayList 비워줌
-            users.clear()
+        fbFireStore?.collection("users")
+            ?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
+                // ArrayList 비워줌
+                users.clear()
+                contentUidList.clear()
 
-            // Task1 : 각 uri , userId 를 객체 Arraylist 로 넣어라
-            for (snapshot in querySnapshot!!.documents) {
-                var item = snapshot.toObject(DataVo::class.java)
-                users.add(item!!)
+                // 각 uri , userId 를 객체 Arraylist 로 넣음
+                for (snapshot in querySnapshot!!.documents) {
+                    var item = snapshot.toObject(DataVo::class.java)
+                    users.add(item!!)
+                    contentUidList.add(snapshot.id)
+                }
+                mAdapter.notifyDataSetChanged()
             }
-            mAdapter.notifyDataSetChanged()
-        }
 
 
         // 3개의 열을 갖는 그리드 레이아웃 매니저를 설정, 기본값은 vertical
@@ -180,12 +180,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
         // 사진 찍기 버튼 클릭시, 카메라 구동
-        btn_picture=findViewById(R.id.btn_picture) //사진 찍기 버튼
+        btn_picture = findViewById(R.id.btn_picture) //사진 찍기 버튼
         btn_picture.setOnClickListener {
             startCapture()
         }
 
+        // yl Task:  받은 빔 표시
+
     }
+
+
 
 
     //카메라 권한 체크
@@ -357,23 +361,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-
-    private fun Timerstart() {
-        var second :Int = 0
-        var minute :Int = 0
-        timer(period = 1000,initialDelay = 1000) {
-            second ++
-            if (second == 60 ) {
-                minute ++
-                second = 0
-            }
-
-            runOnUiThread {
-                sec.text = "$second"	// TextView 세팅
-                min.text = "$minute"	// Textview 세팅
-            }
-        }
-    }
 
 
 

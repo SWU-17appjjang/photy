@@ -27,7 +27,7 @@
             tools:layout_editor_absoluteY="0dp" />
 
         <TextView
-            android:id="@+id/light_counts"
+            android:id="@+id/beam_counts"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:freezesText="true"
