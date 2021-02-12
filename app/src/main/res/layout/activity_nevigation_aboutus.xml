@@ -29,6 +29,7 @@
             android:fontFamily="@font/godom"
             />
         <TextView
+            android:id="@+id/easter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="PoPo"
@@ -47,7 +48,6 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/easter"
         android:layout_width="350dp"
         android:layout_height="407dp"
         android:layout_marginTop="30dp"

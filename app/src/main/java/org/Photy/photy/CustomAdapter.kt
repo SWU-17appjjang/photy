@@ -75,7 +75,6 @@ class CustomAdapter(private val context: Context, private val dataList: ArrayLis
         var viewHolder = (holder as ItemViewHolder).itemView
 
         // Task2 : 각 배열에 있는 데이터를 view 에 있는 요소에 연결하라.
-        viewHolder.userId.text = dataList[position].userId
         Glide.with(viewHolder).load(dataList[position].imageUrl).into(viewHolder.imgUrl)
 
         holder.itemView.setOnClickListener {
