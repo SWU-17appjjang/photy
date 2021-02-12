@@ -148,6 +148,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
 
+        // ArrayList 비워줌
+        users.clear()
+
+
         // users의 문서를 불러온 뒤 DataVo으로 변환해 ArrayList에 담음
         fbFireStore?.collection("users")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
             // ArrayList 비워줌
@@ -159,9 +163,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     var item = snapshot.toObject(DataVo::class.java)
                     users.add(item!!)
                 }
-
                 mAdapter.notifyDataSetChanged()
-
             }
         }
 

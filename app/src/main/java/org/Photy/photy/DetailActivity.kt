@@ -10,7 +10,7 @@ class DetailActivity:AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        var recieveData1 = intent.getStringExtra("image_name")
+        var recieveData1 = intent.getStringExtra("imageUrl")
 
         if(recieveData1 != "") {
             val resoueceId = resources.getIdentifier(recieveData1,"drawable",packageName)

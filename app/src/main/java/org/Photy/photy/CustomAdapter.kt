@@ -78,6 +78,16 @@ class CustomAdapter(private val context: Context, private val dataList: ArrayLis
         viewHolder.userId.text = dataList[position].userId
         Glide.with(viewHolder).load(dataList[position].imageUrl).into(viewHolder.imgUrl)
 
+        holder.itemView.setOnClickListener {
+            view->setPosition(position)
+
+            //open another activity on item click
+            val intent = Intent(context,DetailActivity::class.java )
+            intent.putExtra("imageUrl", dataList[position].imageUrl)
+            context.startActivity(intent)
+
+        }
+
         /*
         holder.bind(dataList[position], context)
 
