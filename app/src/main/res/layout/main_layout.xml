@@ -21,15 +21,61 @@
         android:layout_marginTop="100dp" />
     -->
 
-    <TextView
+    <!--타이머-->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="00:99:00"
-        android:fontFamily="@font/godob"
-        android:textSize="30dp"
-        android:layout_margin="10dp"
-        />
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+        <TextView
+            android:id="@+id/hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="00"
+            android:fontFamily="@font/godob"
+            android:textSize="30dp"
+            android:layout_marginRight="5dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text=":"
+            android:fontFamily="@font/godob"
+            android:textSize="30dp"
+            android:layout_marginRight="5dp"
+            />
+        <TextView
+            android:id="@+id/min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="00"
+            android:fontFamily="@font/godob"
+            android:textSize="30dp"
+            android:layout_marginRight="5dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text=":"
+            android:fontFamily="@font/godob"
+            android:textSize="30dp"
+            android:layout_marginRight="5dp"
+            />
+        <TextView
+            android:id="@+id/sec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="00"
+            android:fontFamily="@font/godob"
+            android:textSize="30dp"
+            />
+    </LinearLayout>
 
 
     <androidx.recyclerview.widget.RecyclerView

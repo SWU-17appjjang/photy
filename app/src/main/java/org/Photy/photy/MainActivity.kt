@@ -28,6 +28,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.navigation.NavigationView
+import com.google.common.collect.ComparisonChain.start
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -55,6 +56,7 @@ import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.util.*
 import kotlin.collections.ArrayList
+import kotlin.concurrent.timer
 import kotlin.jvm.Throws
 
 
@@ -95,6 +97,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     // 데이터 리스트
     var users : ArrayList<DataVo> = arrayListOf()
+
 
     /*
     private var userList = arrayListOf<DataVo> (
@@ -148,9 +151,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
 
-        // ArrayList 비워줌
-        users.clear()
-
 
         // users의 문서를 불러온 뒤 DataVo으로 변환해 ArrayList에 담음
         fbFireStore?.collection("users")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
@@ -166,8 +166,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
 
-
-
         // 3개의 열을 갖는 그리드 레이아웃 매니저를 설정, 기본값은 vertical
         val gridLayoutManager = GridLayoutManager(applicationContext, 3)
         recycler_view.layoutManager = gridLayoutManager
@@ -175,6 +173,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // 세로 간격 설정
         recycler_view.addItemDecoration(VerticalItemDecorator(20))
 
+
+        // 사진 찍기 버튼 클릭시, 카메라 구동
         btn_picture=findViewById(R.id.btn_picture) //사진 찍기 버튼
         btn_picture.setOnClickListener {
             startCapture()
@@ -288,7 +288,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     // 업로드 버튼 클릭시 Firebase에 사진 업로드
                     btn_upload.setOnClickListener {
                         funImageUpload(result.uri)
-
+                        start()
                     }
                     // 홈버튼 클릭시 main 레이아웃으로 회귀
                     btn_home.setOnClickListener{
@@ -314,16 +314,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         storageRef?.putFile(uriPhoto!!)?.addOnSuccessListener {
             storageRef.downloadUrl.addOnSuccessListener { uri ->
                 var userInfo = ModelFriends()
-
                 userInfo.imageUrl = uri.toString()
+                userInfo.userId = fbAuth?.currentUser?.email
+
+                var tempImgCount = userInfo.imgCount
 
                 fbFireStore?.collection("users")?.document(fbAuth?.uid.toString())?.update("imageUrl", userInfo.imageUrl.toString())
-
-
+                val result = hashMapOf( "userId" to userInfo.userId, "imgCount" to tempImgCount, "url" to userInfo.imageUrl, "beam" to userInfo.beam)
                 mDatabase = FirebaseDatabase.getInstance().getReference()
-                mDatabase.child("user_image").push().setValue(userInfo.imageUrl)
+                mDatabase.child("user_image").push().setValue(result)
             }
-
             Toast.makeText(img_picture.context, "이미지를 업로드했습니다!", Toast.LENGTH_SHORT).show()
             var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
@@ -333,6 +333,25 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         }
     }
+
+    private fun Timerstart() {
+        var second :Int = 0
+        var minute :Int = 0
+        timer(period = 1000,initialDelay = 1000) {
+            second ++
+            if (second == 60 ) {
+                minute ++
+                second = 0
+            }
+
+            runOnUiThread {
+                sec.text = "$second"	// TextView 세팅
+                min.text = "$minute"	// Textview 세팅
+            }
+        }
+    }
+
+
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean { // 상단 메뉴 클릭시
