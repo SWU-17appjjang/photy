@@ -103,6 +103,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     // 데이터 리스트 - 좋아요를 위한 uid
     var contentUidList: ArrayList<String> = arrayListOf()
 
+    var countTemp : Int = 0
+    //var bCount : Boolean = intent.getBooleanExtra("bCount", false)
+
+
+    var bCount : Boolean = false
+
 
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -353,6 +359,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             Toast.makeText(img_picture.context, "이미지를 업로드했습니다!", Toast.LENGTH_SHORT).show()
             // 이미지 저장 시 인텐트를 통해 메인 엑티비티로 복귀
             var intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("bCount",true)
+
+
             startActivity(intent)
         }
         storageRef?.putFile(uriPhoto!!)?.addOnFailureListener{
@@ -382,13 +391,22 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                 // 이미지 카운트를 네비게이션 뷰 텍스트뷰와 연동
                 imgCount = findViewById(R.id.photterScore)
-                var testCount = userInfo.imgCount.toString()
-               // var testCount =
+                bCount = intent.getBooleanExtra("bCount", false)
+                if( bCount == true) {
+                    countTemp++
+                    bCount = false
+
+                }
+                //Toast.makeText(this,"네비게이션을 열었다!." + bCount + countTemp,Toast.LENGTH_SHORT).show()
+
 
                 // 텍스트 내용 연결 후 변경
-                imgCount.text = testCount
+                imgCount.text = countTemp.toString()
+
+                intent.putExtra("countTemp", countTemp)
             }
         }
+
         return super.onOptionsItemSelected(item)
     }
 
