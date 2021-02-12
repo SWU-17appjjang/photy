@@ -64,11 +64,14 @@ import kotlin.jvm.Throws
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var firebaseAuth: FirebaseAuth
 
+
     val REQUEST_IMAGE_CAPTURE = 1
     lateinit var currentPhotoPath : String
     lateinit var btn_picture : Button
     lateinit var img_picture : ImageView
 
+
+    // 사진 업로드 버튼 초기화
     lateinit var btn_upload: Button
 
     //계정 보여주는 텍스트 뷰
@@ -135,6 +138,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if(true){
             var userInfo = ModelFriends()
 
+            // 데이터베이스에서 아이디와 uid를 가져옴
             userInfo.uid = fbAuth?.uid
             userInfo.userId = fbAuth?.currentUser?.email
 
@@ -143,8 +147,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             fbFireStore?.collection("users")?.document(fbAuth?.uid.toString())?.set(userInfo)
             //Toast.makeText(this@MainActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
 
+            // 빔카운트 아이디와 연결
             beamCount = findViewById(R.id.light_counts)
 
+            // 빔카운트 텍스트를 기존 값과 연결
             beamCount.text = userInfo.beam.toString()
 
         }
@@ -194,6 +200,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 ActivityCompat.finishAffinity(this@MainActivity) // 권한 거부시 앱 종료
             }
         }
+        //Ted 라이브러리
         TedPermission.with(this)
                 .setPermissionListener(permis)
                 .setRationaleMessage("카메라 사진 권한 필요")
@@ -255,6 +262,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onActivityResult(requestCode, resultCode, data)
         setContentView(R.layout.activity_upload)
 
+        // 이미지뷰 초기화
         img_picture = findViewById(R.id.img_picture)
 
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
@@ -306,6 +314,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private fun funImageUpload(uriPhoto: Uri){ // 편집된 이미지 Firebase에 연동
         fbStorage = FirebaseStorage.getInstance()
 
+        // 이미지 이름을 시간으로 정해 겹치지 않게 함
         var timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
         var imgFileName = "JPEG_${timeStamp}_"
         var storageRef = fbStorage?.reference?.child("images")?.child(imgFileName)
@@ -314,26 +323,31 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             storageRef.downloadUrl.addOnSuccessListener { uri ->
                 var userInfo = ModelFriends()
 
+                // url를 가져와 객체에 넣음
                 userInfo.imageUrl = uri.toString()
                 userInfo.userId = fbAuth?.currentUser?.email
 
+                // 저장된 이미지 카운트를 임시 저장소에 저장
                 var tempImgCount = userInfo.imgCount
 
+                // 값을 1 더해줌
                 if (tempImgCount != null) {
                     tempImgCount = tempImgCount + 1
                 }
 
-
+                // 파일 저장 경로를 저장함
                 fbFireStore?.collection("users")?.document(fbAuth?.uid.toString())?.update("imageUrl", userInfo.imageUrl.toString())
 
-
+                // 해시맵을 만들어 객체를 만듦
                 val result = hashMapOf("userId" to userInfo.userId ,"imgCount" to tempImgCount, "url" to userInfo.imageUrl, "beam" to userInfo.beam)
 
+                // 파이어베이스 실시간 데이터에 경로저장
                 mDatabase = FirebaseDatabase.getInstance().getReference()
                 mDatabase.child("user_image").push().setValue(result)
 
             }
             Toast.makeText(img_picture.context, "이미지를 업로드했습니다!", Toast.LENGTH_SHORT).show()
+            // 이미지 저장 시 인텐트를 통해 메인 엑티비티로 복귀
             var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
@@ -342,6 +356,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         }
     }
+
 
     private fun Timerstart() {
         var second :Int = 0
@@ -378,10 +393,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 user_email = findViewById(R.id.user_email)
                 user_email.text = email
 
+                // 이미지 카운트를 네비게이션 뷰 텍스트뷰와 연동
                 imgCount = findViewById(R.id.photterScore)
                 var testCount = userInfo.imgCount.toString()
                // var testCount =
 
+                // 텍스트 내용 연결 후 변경
                 imgCount.text = testCount
             }
         }
