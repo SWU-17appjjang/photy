@@ -29,8 +29,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.gun0912.tedpermission.PermissionListener
@@ -315,13 +314,33 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             storageRef.downloadUrl.addOnSuccessListener { uri ->
                 var userInfo = ModelFriends()
 
+
                 userInfo.imageUrl = uri.toString()
 
-                fbFireStore?.collection("users")?.document(fbAuth?.uid.toString())?.update("imageUrl", userInfo.imageUrl.toString())
+                userInfo.userId = fbAuth?.currentUser?.email
+
+               // var tempImgCount = userInfo.imgCount
+
+                var tempImgCount = 1
+
+               /* if (tempImgCount != null) {
+                    tempImgCount = tempImgCount + 1
+                }
+*/
+
+                fbFireStore?.collection("users")?.document(userInfo.userId.toString())?.update("imageUrl", userInfo.imageUrl.toString(),
+                    "imgCount", tempImgCount)
+
+
+
+                val result = hashMapOf("imgCount" to userInfo.imgCount, "url" to userInfo.imageUrl, "beam" to userInfo.beam)
 
 
                 mDatabase = FirebaseDatabase.getInstance().getReference()
-                mDatabase.child("user_image").push().setValue(userInfo.imageUrl)
+                mDatabase.child("user_image").push().setValue(result)
+
+
+
             }
 
             Toast.makeText(img_picture.context, "이미지를 업로드했습니다!", Toast.LENGTH_SHORT).show()
@@ -342,6 +361,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         var email = userInfo.userId
 
+
+
         when(item.itemId){
             android.R.id.home->{ // 메뉴 버튼
                 main_drawer_layout.openDrawer(GravityCompat.START)    // 네비게이션 드로어 열기
@@ -349,7 +370,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 user_email.text = email
 
                 imgCount = findViewById(R.id.photterScore)
-                imgCount.text = userInfo.imgCount.toString()
+                var testCount = userInfo.imgCount.toString()
+               // var testCount =
+
+                imgCount.text = testCount
             }
         }
         return super.onOptionsItemSelected(item)
