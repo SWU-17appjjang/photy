@@ -124,6 +124,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         fbAuth = FirebaseAuth.getInstance()
         fbFireStore = FirebaseFirestore.getInstance()
 
+
+        // Adapter 선언
+        val mAdapter = CustomAdapter(this,users)
+        recycler_view.adapter = mAdapter
+
         // 로그인
         if(true){
             var userInfo = ModelFriends()
@@ -131,7 +136,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             userInfo.uid = fbAuth?.uid
             userInfo.userId = fbAuth?.currentUser?.email
 
-            userInfo.dateAndtime = LocalDateTime.now() //업로드 시간 날짜
+            //userInfo.dateAndtime = LocalDateTime.now() //업로드 시간 날짜
 
             fbFireStore?.collection("users")?.document(fbAuth?.uid.toString())?.set(userInfo)
             //Toast.makeText(this@MainActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
@@ -148,17 +153,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             // ArrayList 비워줌
             users.clear()
             for (snapshot in querySnapshot!!.documents) {
-                var item = snapshot.toObject(DataVo::class.java)
+
                 // Task1 : 각 uri , userId 를 객체 Arraylist 로 넣어라
-                //users.imgUrl = snapshot?.data!!["imgUri"].toString()
+                for (snapshot in querySnapshot!!.documents) {
+                    var item = snapshot.toObject(DataVo::class.java)
+                    users.add(item!!)
+                }
+
+                mAdapter.notifyDataSetChanged()
 
             }
         }
 
 
-        // Adapter 선언
-        val mAdapter = CustomAdapter(this,users)
-        recycler_view.adapter = mAdapter
+
 
         // 3개의 열을 갖는 그리드 레이아웃 매니저를 설정, 기본값은 vertical
         val gridLayoutManager = GridLayoutManager(applicationContext, 3)

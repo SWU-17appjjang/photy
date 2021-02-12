@@ -1,3 +1,8 @@
 package org.Photy.photy
 
-class DataVo(val userId:String, val imageUrl:String)
+import java.util.*
+import kotlin.collections.HashMap
+
+class DataVo(val beam:Int, val imageUrl:String, val imageCount:Int, val uid:String, val userId:String) {
+    constructor() : this (0,"",0,"","")
+}
