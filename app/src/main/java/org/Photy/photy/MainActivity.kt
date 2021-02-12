@@ -156,15 +156,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         fbFireStore?.collection("users")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
             // ArrayList 비워줌
             users.clear()
-            for (snapshot in querySnapshot!!.documents) {
 
-                // Task1 : 각 uri , userId 를 객체 Arraylist 로 넣어라
-                for (snapshot in querySnapshot!!.documents) {
-                    var item = snapshot.toObject(DataVo::class.java)
-                    users.add(item!!)
-                }
-                mAdapter.notifyDataSetChanged()
+            // Task1 : 각 uri , userId 를 객체 Arraylist 로 넣어라
+            for (snapshot in querySnapshot!!.documents) {
+                var item = snapshot.toObject(DataVo::class.java)
+                users.add(item!!)
             }
+            mAdapter.notifyDataSetChanged()
         }
 
 
