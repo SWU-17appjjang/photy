@@ -27,7 +27,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() { // 로그인 액티비티
     private lateinit var firebaseAuth: FirebaseAuth
     private val RC_SIGN_IN = 99
     private val TAG = "googleLogin"
@@ -44,8 +44,6 @@ class LoginActivity : AppCompatActivity() {
         spannableString.setSpan(ForegroundColorSpan(Color.parseColor("#1e20a1")), 11, 16, spannableString.length )
         spannableString.setSpan(StyleSpan(Typeface.BOLD), 11, 16, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         info.text = spannableString
-
-
 
         // 구글 로그인 버튼
         google_button = findViewById(R.id.google_button)

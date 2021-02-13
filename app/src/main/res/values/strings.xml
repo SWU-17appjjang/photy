@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--사용 설명 튜토리얼 멘트-->
     <string name="app_name">photy</string>
 
     <string name="text_intro1">반갑습니다 ٩( ᐛ ) و</string>

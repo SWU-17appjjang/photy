@@ -6,7 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
-// 첫 번째, 튜토리얼 슬라이더 페이지
+
+// 첫 번째, 사용 가이드 튜토리얼 슬라이더 페이지
 class Intro1Fragment : Fragment() {
 
     override fun onCreateView(
