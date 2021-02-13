@@ -22,6 +22,7 @@ class IndicatorLayout : LinearLayout {
         initIndicators(context, attrs, defStyleAttr)
     }
 
+    // TypedArray로 attrs.xml에 선언된 속성에서 속성 매개 변수를 가져옴
     private fun initIndicators(context: Context, attrs: AttributeSet, defStyleAttr: Int) {
         val typedArray = context.obtainStyledAttributes(
             attrs, R.styleable.IndicatorLayout, defStyleAttr, 0)
@@ -45,23 +46,25 @@ class IndicatorLayout : LinearLayout {
         for (i in 0 until indicatorCount) {
             val indicator = View(context)
 
-            // setting indicator layout margin
+            // indicator layout margin 설정
             val layoutParams = LayoutParams(px(10f), px(10f))
             layoutParams.setMargins(px(3f), px(3f), px(3f), px(3f));
             indicator.layoutParams = layoutParams
 
             indicator.setBackgroundResource(R.drawable.indicator_unselected)
 
-            // add the view to indicator layout
+            // indicator layout에 view 추가
             addView(indicator)
         }
     }
 
+    // indicator를 Count해 업데이트
     fun setIndicatorCount(count: Int) {
         indicatorCount = count
         updateIndicators()
     }
 
+    // 현재 position에 따른 indicator 아이콘 변경
     fun selectCurrentPosition(position: Int) {
         if (position >= 0 && position <= indicatorCount) {
 

@@ -12,7 +12,7 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // making the status bar transparent
+        // 상태 표시줄 없애기
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ) {
             window.decorView.systemUiVisibility =
                     View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
@@ -20,6 +20,7 @@ class SplashActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_splash)
 
+        // SplashActivity 종료 후, IntroSliderActivity 호출
         Handler().postDelayed(object: Runnable {
             override fun run() {
                 startActivity(Intent(this@SplashActivity, IntroSliderActivity::class.java))

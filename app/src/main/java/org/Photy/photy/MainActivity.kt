@@ -482,14 +482,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-        // 탈퇴 클릭시 탈퇴 처리 후 로그인 화면으로 회귀
+        // 탈퇴 클릭시 탈퇴 처리 후 어플종료
         btn_withdrawal.setOnClickListener{
             firebaseAuth.currentUser?.delete()
-            Toast.makeText(this,"회원탈퇴 하셨습니다.",Toast.LENGTH_SHORT).show()
-            var intent = Intent(this, LoginActivity::class.java)
+            Toast.makeText(this,"회원탈퇴 하셨습니다.포티가 종료됩니다.",Toast.LENGTH_SHORT).show()
+
             //재로그인 시 자동로그인 방지
             googleSignInClient.revokeAccess().addOnCompleteListener {
-                startActivity(intent)
+                finish()
             }
         }
     }
