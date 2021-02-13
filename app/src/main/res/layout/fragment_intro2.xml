@@ -10,16 +10,17 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center">
+        android:gravity="center"
+        >
 
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="196dp"
+            android:layout_height="242dp"
             android:src="@drawable/slider_page_2_1" />
 
         <ImageView
             android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_height="match_parent"
             android:src="@drawable/slider_page_2_2" />
     </LinearLayout>
 
