@@ -1,8 +1,12 @@
+/* 어플명 : 즉석 사진 공유 어플, 포티
+* Front : 안예린, 정수빈
+* back :  조수민, 조희연
+* 최종 제출 날짜 : 21-02-13
+* */
 package org.Photy.photy
 
 import VerticalItemDecorator
 import android.app.Activity
-import android.app.Application
 import android.content.Intent
 import android.graphics.ImageDecoder
 import android.net.Uri
@@ -10,20 +14,14 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
-import android.provider.ContactsContract
 import android.provider.MediaStore
 import android.view.*
 import android.widget.*
 import androidx.annotation.RequiresApi
-import androidx.appcompat.widget.Toolbar
-import androidx.appcompat.app.ActionBar
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
 import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -40,22 +38,16 @@ import com.theartofdev.edmodo.cropper.CropImageView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_nevigation_aboutus.*
 import kotlinx.android.synthetic.main.activity_nevigation_withdrawal.*
-import kotlinx.android.synthetic.main.activity_splash.*
 import kotlinx.android.synthetic.main.activity_upload.*
 import kotlinx.android.synthetic.main.easter.*
 import kotlinx.android.synthetic.main.main_layout.*
 import kotlinx.android.synthetic.main.main_toolbar.*
-import org.w3c.dom.Text
 import java.io.File
 import java.io.IOException
 import java.lang.System.currentTimeMillis
-import java.nio.channels.AsynchronousFileChannel.open
-import java.nio.channels.DatagramChannel.open
 import java.text.SimpleDateFormat
-import java.time.LocalDateTime
 import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.concurrent.timer
 import kotlin.jvm.Throws
 
 
@@ -68,7 +60,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     lateinit var currentPhotoPath : String
     lateinit var btn_picture : Button
     lateinit var img_picture : ImageView
-
 
     // 사진 업로드 버튼 초기화
     lateinit var btn_upload: Button
@@ -104,8 +95,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     var contentUidList: ArrayList<String> = arrayListOf()
 
     var countTemp : Int = 0
-    //var bCount : Boolean = intent.getBooleanExtra("bCount", false)
-
 
     var bCount : Boolean = false
 
@@ -135,21 +124,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val mAdapter = CustomAdapter(this, users, contentUidList)
         recycler_view.adapter = mAdapter
 
-        // 유저 정보
 
-        var userInfo = ModelFriends()
 
         // 로그인
         if (true) {
+            // 유저 정보
+            var userInfo = ModelFriends()
 
             // 데이터베이스에서 아이디와 uid를 가져옴
             userInfo.uid = fbAuth?.uid
             userInfo.userId = fbAuth?.currentUser?.email
 
-            //userInfo.dateAndtime = LocalDateTime.now() //업로드 시간 날짜
-
             fbFireStore?.collection("users")?.document(fbAuth?.uid.toString())?.set(userInfo)
-            //Toast.makeText(this@MainActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
 
             // 빔카운트 아이디와 연결
             beamCount = findViewById(R.id.beam_counts)
@@ -176,7 +162,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 mAdapter.notifyDataSetChanged()
             }
 
-
         // 3개의 열을 갖는 그리드 레이아웃 매니저를 설정, 기본값은 vertical
         val gridLayoutManager = GridLayoutManager(applicationContext, 3)
         recycler_view.layoutManager = gridLayoutManager
@@ -184,24 +169,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // 세로 간격 설정
         recycler_view.addItemDecoration(VerticalItemDecorator(20))
 
-
         // 사진 찍기 버튼 클릭시, 카메라 구동
         btn_picture = findViewById(R.id.btn_picture) //사진 찍기 버튼
         btn_picture.setOnClickListener {
             startCapture()
         }
 
-        // yl Task:  받은 빔 표시
 
     }
-
-
 
 
     //카메라 권한 체크
     fun settingPermission(){
         var permis = object  : PermissionListener {
-            //            어떠한 형식을 상속받는 익명 클래스의 객체를 생성하기 위해 다음과 같이 작성
+            // 어떠한 형식을 상속받는 익명 클래스의 객체를 생성하기 위해 다음과 같이 작성
             override fun onPermissionGranted() {
             }
 
@@ -217,7 +198,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .setDeniedMessage("카메라 권한 요청 거부")
                 .setPermissions(
                         android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
-//                android.Manifest.permission.READ_EXTERNAL_STORAGE,
                         android.Manifest.permission.CAMERA)
                 .check()
     }
@@ -246,9 +226,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    // 사진 찍은 후 이미지를 파일로 저장. 파일명은 현재 날짜와 시간
+
     @Throws(IOException::class)
-    private fun createImageFile(): File {
+    private fun createImageFile(): File { // 사진 찍은 후 이미지를 파일로 저장. 파일명은 현재 날짜와 시간
         val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
         val storageDir: File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
         return File.createTempFile(
@@ -260,8 +240,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    //이미지 Crop 함수
-    private fun launchImageCrop(uri: Uri?) {
+
+    private fun launchImageCrop(uri: Uri?) { //이미지 Crop 함수
         CropImage.activity(uri).setGuidelines(CropImageView.Guidelines.ON)
                 .setCropShape(CropImageView.CropShape.RECTANGLE)
                 .setAspectRatio(1, 1)
@@ -372,15 +352,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
 
-
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean { // 상단 메뉴 클릭시
         var userInfo = ModelFriends()
         userInfo.uid = fbAuth?.uid
         userInfo.userId = fbAuth?.currentUser?.email
 
         var email = userInfo.userId
-
 
 
         when(item.itemId){
@@ -397,12 +374,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     bCount = false
 
                 }
-                //Toast.makeText(this,"네비게이션을 열었다!." + bCount + countTemp,Toast.LENGTH_SHORT).show()
-
 
                 // 텍스트 내용 연결 후 변경
                 imgCount.text = countTemp.toString()
-
                 intent.putExtra("countTemp", countTemp)
             }
         }
@@ -410,7 +384,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean { // 메뉴 바 버튼 클릭 시
+    override fun onNavigationItemSelected(item: MenuItem): Boolean { // 네비게이션 메뉴 버튼 클릭 시
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))

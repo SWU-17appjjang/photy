@@ -14,8 +14,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_view.view.*
 
 
-class CustomAdapter(private val context: Context, private val dataList: ArrayList<DataVo>,private val uidList: ArrayList<String>) :RecyclerView.Adapter<CustomAdapter.ItemViewHolder>(){
 
+class CustomAdapter(private val context: Context, private val dataList: ArrayList<DataVo>,private val uidList: ArrayList<String>) :RecyclerView.Adapter<CustomAdapter.ItemViewHolder>(){
 
     var mPosition = 0
 
@@ -43,25 +43,6 @@ class CustomAdapter(private val context: Context, private val dataList: ArrayLis
 
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        /*
-        private val userPhoto = itemView.findViewById<ImageView>(R.id.userImg)
-        //private val userName = itemView.findViewById<ImageView>(R.id..userNameTxt) //우린 계정명 안나타냄
-
-        fun bind(dataVo: DataVo,context:Context) {
-            if(dataVo.photo != "") {
-                val resoueceid =
-                    context.resources.getIdentifier(dataVo.photo, "drawabel", context.packageName)
-
-                if(resoueceid >0) {
-                    userPhoto.setImageResource(resoueceid)
-                }
-                else userPhoto.setImageResource(R.mipmap.ic_launcher_round)
-            }
-            else{
-                userPhoto.setImageResource(R.mipmap.ic_launcher_round)
-            }
-        }
-         */
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType:Int) : ItemViewHolder {
@@ -74,42 +55,22 @@ class CustomAdapter(private val context: Context, private val dataList: ArrayLis
     override fun onBindViewHolder(holder: ItemViewHolder,position: Int) {
         var viewHolder = (holder as ItemViewHolder).itemView
 
-        // Task2 : 각 배열에 있는 데이터를 view 에 있는 요소에 연결하라.
+        // 각 배열에 있는 데이터를 view 에 있는 요소에 연결
         Glide.with(viewHolder).load(dataList[position].imageUrl).into(viewHolder.imgUrl)
 
+        // recyclable 뷰에 있는 아이템 클릭시
         holder.itemView.setOnClickListener {
             view->setPosition(position)
 
-            //open another activity on item click
+            // 사진 상세 페이지로 이동
             val intent = Intent(context,DetailActivity::class.java )
 
             // 값 전달 - imageUrl 과 uidList
             intent.putExtra("imageUrl", dataList[position].imageUrl)
             intent.putExtra("contentUid",uidList[position])
             context.startActivity(intent)
-
         }
 
-        /*
-        holder.bind(dataList[position], context)
-
-
-        holder.itemView.setOnClickListener {
-            view->setPosition(position)
-
-            //open another activity on item click
-            val intent = Intent(context,DetailActivity::class.java )
-            intent.putExtra("image_name", dataList[position].photo)
-            context.startActivity(intent)
-
-        }
-
-        holder.itemView.setOnLongClickListener { view ->
-            setPosition(position)
-            Toast.makeText(view.context,"아이템 롱 클릭",Toast.LENGTH_SHORT).show()
-            return@setOnLongClickListener true
-        }
-         */
     }
 
 

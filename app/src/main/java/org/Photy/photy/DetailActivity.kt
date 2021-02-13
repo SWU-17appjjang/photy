@@ -12,9 +12,9 @@ import kotlinx.android.synthetic.main.activity_view.view.*
 
 
 class DetailActivity():AppCompatActivity() {
+
+    // 파이어 베이스 연동
     var fbFireStore: FirebaseFirestore? = null
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +32,8 @@ class DetailActivity():AppCompatActivity() {
             detail_img.setImageResource(R.mipmap.ic_launcher_round)
         }
 
+
+        // 빔 버튼을 클릭시
         btn_beam.setOnClickListener {
             favoriteEvent(recieveData2)
             Toast.makeText(this, "포터님의 사진에 빔을 쏘았습니다!", Toast.LENGTH_SHORT).show()
@@ -39,11 +41,13 @@ class DetailActivity():AppCompatActivity() {
 
     }
 
+
+    // 빔 버튼 액션
     fun favoriteEvent(uid : String){
         var tsDoc = fbFireStore?.collection("users")?.document(uid)
 
+        // 해당 사진 업로드 계정의 빔 카운트 증가 후 DB 연동
         fbFireStore?.runTransaction { transaction ->
-
             var contentDTO = transaction.get(tsDoc!!).toObject(DataVo::class.java)
 
             if (contentDTO != null) {

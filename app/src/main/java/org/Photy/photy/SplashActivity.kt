@@ -7,7 +7,7 @@ import android.os.Handler
 import android.view.View
 import android.os.Build
 
-class SplashActivity : AppCompatActivity() {
+class SplashActivity : AppCompatActivity() { // 어플 구동시 처음 나오는 Splash 액티비티
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
