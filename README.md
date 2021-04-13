@@ -1,5 +1,4 @@
 #### 2021 겨울방학 Programming GURU2 – Android 분반 
-</br>
 2021 서울여대 GURU2 안드로이드 분반 해커톤 결과물-장려상 수상 </br>
 This is the result of Hackathon of an intensive coding course(Guru2) at SWU. We got Encouragement Award in the contest.
 </br>
